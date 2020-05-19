@@ -21,4 +21,6 @@ Route::group(['middleware' => 'verified'], function(){
     
     //userscontroller
 	Route::resource('users', 'UsersController', ['as'=>'admin']);
+	Route::resource('amenities', 'AmenitiesController', ['as'=>'admin']);
+	Route::resource('properties', 'PropertiesController', ['as'=>'admin']);
 });

@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Amenity extends Model
 {
     use SoftDeletes;
-    //
+
+    protected $fillable = ['name'];
+
+    public function properties()
+    {
+        return $this->morphedByMany(Property::class, 'amenitable')->withTimestamps();
+    }
+
 }

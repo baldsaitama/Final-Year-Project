@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CreateAmenitiesTable extends Migration
 {
@@ -15,13 +14,23 @@ class CreateAmenitiesTable extends Migration
     public function up()
     {
         Schema::create('amenities', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('amenities');
-            $table->unsignedBigInteger('property_id');
+            $table->increments('id');
+            $table->string('name')->unique();
             $table->timestamps();
-            $table->foreign('property_id')
+            $table->softDeletes();
+        });
+
+        Schema::create('amenitables', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedInteger('amenity_id')->index();
+            $table->unsignedBigInteger('amenitable_id')->index();
+            $table->string('amenitable_type');
+            $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('amenity_id')
                 ->references('id')
-                ->on('properties')
+                ->on('amenities')
                 ->onDelete('cascade');
         });
     }
@@ -34,5 +43,6 @@ class CreateAmenitiesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('amenities');
+        Schema::dropIfExists('amenitables');
     }
 }

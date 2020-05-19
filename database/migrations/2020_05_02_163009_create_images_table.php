@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CreateImagesTable extends Migration
 {
@@ -17,8 +16,13 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('property_id')->index();
-            $table->string('image')->nullable();
+            $table->string('original_name')->nullable();
+            $table->string('name')->nullable();
+            $table->string('path');
+            $table->string('mime_type', 20)->nullable();
+            $table->decimal('size', 15, 4)->nullable();
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('property_id')
                 ->references('id')
                 ->on('properties')

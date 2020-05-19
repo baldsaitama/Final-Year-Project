@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CreateUsersTable extends Migration
 {
@@ -21,10 +20,21 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('user_type');
-            $table->string('phone');
+            $table->string('phone')->nullable();
+            $table->string('profile_picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
+
+        \DB::table('users')->insert([
+            'name'              => 'admin',
+            'email'             => 'admin@admin.com',
+            'password'          => bcrypt('admin'),
+            'email_verified_at' => now(),
+            'user_type'              => 'system',
+            'phone'             => '9861446462',
+        ]);
     }
 
     /**

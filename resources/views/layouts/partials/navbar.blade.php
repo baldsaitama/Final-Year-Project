@@ -20,12 +20,16 @@
                     <a class="nav-link" href="#">Requirements</a>
                 </li> -->
                 @auth
-                    {{-- <li class="nav-item">
-                        <a class="nav-link logBtn" href="login">Log In</a>
-                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link logBtn" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 @else
                         <li class="nav-item">
-                            <a class="nav-link logBtn" href="login">Log In</a>
+                            {{-- <a class="nav-link logBtn" href="{{route('register')}}">Register</a> --}}
+                            <a class="nav-link logBtn" href="{{route('admin.dashboard')}}">Log In</a>
                         </li>
                 @endauth
             </ul>

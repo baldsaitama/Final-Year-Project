@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CreatePropertiesTable extends Migration
 {
@@ -16,6 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->index();
             $table->string('status');
             $table->string('type');
             $table->string('category');
@@ -30,10 +30,16 @@ class CreatePropertiesTable extends Migration
             $table->string('kitchen');
             $table->string('bedroom');
             $table->string('bathroom');
-            $table->string('living room');
+            $table->string('living_room');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null');
         });
     }
 
