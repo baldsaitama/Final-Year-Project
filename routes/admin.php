@@ -10,16 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespace' => 'General'], function(){
-	Route::get('/', 'WelcomeController@index')->name('welcome');
 
-});
+Route::get('/logout', [
+    'as'=>'admin.logout',
+    'uses' => 'AuthController@logout',
+]);
 
-Auth::routes(['verify' => true]);
 Route::group(['middleware' => 'verified'], function(){
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::group(['namespace' => 'General'], function(){
-		Route::resource('users','UsersController');
-    });
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('admin.dashboard');
+    
+    //userscontroller
+	Route::resource('users', 'UsersController', ['as'=>'admin']);
 });
-

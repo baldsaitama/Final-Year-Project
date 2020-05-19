@@ -1,185 +1,89 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
-    <title>Register | Ghar Bhada</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-</head>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-<body>
-<!-- navbar begins -->
-<div class="gharBhadaNavbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark container-fluid fixed-top">
-        <a class="navbar-brand" href="index.html">GHAR BHADA</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html#buyHouse">Buy Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#rentHouse">Rent</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="postProperty">Post Property</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Requirements</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link logBtn" href="login">Log In</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<!-- navbar ends -->
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-<!-- register -->
-<div class="wrapper">
-    <div class="container-fluid">
-        <div class="registerBox">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Register</h2>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <label>Full Name</label>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                        <div class="col-8">
-                            <input type="text" class="form-control" placeholder="Enter Full Name">
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <label>Email Address</label>
+
+                        <div class="form-group row">
+                            <label for="user_type" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="user_type">
+                                    <option value="owner">Owner</option>
+                                    <option value="visitor">Visitor</option>
+                                </select>
+
+                            </div>
                         </div>
-                        <div class="col-8">
-                            <input type="email" class="form-control" placeholder="Enter Email Address">
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <label>Password</label>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
                         </div>
-                        <div class="col-8">
-                            <input type="password" class="form-control" placeholder="Enter Password">
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <label>Confrim Password</label>
-                        </div>
-                        <div class="col-8">
-                            <input type="password" class="form-control" placeholder="Enter Confrim Password">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <label>User Type</label>
-                        </div>
-                        <div class="col-8">
-                            <select class="form-control">
-                                <option class="owner" value="owner">
-                                    Owner
-                                </option>
-                                <option class="guest" value="guest">
-                                    Guest
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="bhadaBnt">
-                        <buton class="btn btn-bhadaBtn">Register</buton>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="alreadyAc">
-                        <p>Already have an account ? <a href="login">Log In</a></p>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- footer begins -->
-<footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>2020 © Ghar Bhada Pvt. Ltd.</p>
-                <p>All rights reserved </p>
-                <div class="socialIcons">
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<script type="text/javascript" src="js/jQuery.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/gharBhadaScrollTop.js"></script>
-<script type="text/javascript" src="js/wow.js"></script>
-<script>
-    new WOW().init();
-</script>
-<script src="js/smooth-scroll.js"></script>
-<script type="text/javascript">
-    var scroll = new SmoothScroll('a[href*="#buyHouse"]', {
-        speed: 1500,
-        offset: 100,
-
-    });
-    var scroll = new SmoothScroll('a[href*="#rentHouse"]', {
-        speed: 1500,
-        offset: 100,
-
-    });
-</script>
-
-
-
-
-
-</body>
-
-</html>
+@endsection
