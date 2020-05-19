@@ -1,0 +1,521 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+.container-fluid {
+    padding: 0 70px;
+}
+
+.gharBhadaHeading {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.gharBhadaInfo {
+    font-size: 15px;
+    color: #6d6d6d;
+    text-align: center;
+    font-weight: 550;
+    word-spacing: 6px;
+    letter-spacing: 0;
+}
+
+.gharBhadaBtnGrp {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.btn-gharBhadaBtn {
+    background-color: #10c9c3;
+    border-radius: 0;
+    padding: 13px 20px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 11px;
+}
+
+.btn-gharBhadaBtn:hover {
+    background-color: #0b9c98;
+    color: #fff;
+}
+
+.btn:focus,
+.btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/* navbar css */
+
+.gharBhadaNavbar .bg-dark {
+    background-color: #ffffff !important;
+    /* padding: 0.5rem 1rem; */
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.gharBhadaNavbar .navbar-brand {
+    /* font-size: 40px; */
+    font-weight: bolder;
+    color: #0b9c98;
+}
+
+.navbar-nav li {
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.navbar-nav li:last-child {
+    padding-right: 0;
+    margin-top: 0px;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+
+/* banner  */
+
+.bhadaNewSlide {
+    background-image: url("../images/gharbanner.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bhadaInner {
+    background: linear-gradient(90deg, rgba(11, 156, 152, 1) 0, transparent 60%);
+    height: 100vh;
+    width: 100%;
+}
+
+.gharBhadaInfo {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+}
+
+.gharBhadaInfo h1 {
+    font-weight: 800;
+    /* font-family: 'Noto Sans', sans-serif; */
+    text-align: left;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    outline: #000;
+}
+
+.gharBhadaInfo p {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+}
+
+.gharBhadaHeading h2 {
+    font-weight: 600;
+}
+
+.logBtn {
+    background-color: #0b9c98;
+    padding: 10px 25px !important;
+    color: #fff !important;
+    font-weight: 200 !important;
+    border-radius: 0.25rem;
+}
+
+footer {
+    background-color: #000;
+    padding: 20px 0;
+    color: #dadada;
+    text-align: center;
+}
+
+footer p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.socialIcons {
+    padding-top: 7px;
+}
+
+.socialIcons ul {
+    margin: 0;
+    padding: 0;
+}
+
+.socialIcons li {
+    list-style-type: none;
+    background-color: #6d6d6d;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.socialIcons li i {
+    color: #dadada;
+}
+
+.socialIcons a {
+    color: #dadada;
+}
+
+.socialIcons a :hover {
+    color: #a5a5a5;
+}
+
+.gharBhadaInfo form {
+    position: relative;
+    margin-top: 20px;
+}
+
+.gharBhadaInfo button {
+    position: absolute;
+    right: 5px;
+    border: 0;
+    background-color: transparent;
+    top: 5px;
+    font-size: 20px;
+    color: #0b9c98;
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 0.25rem;
+}
+
+::placeholder {
+    font-size: 15px;
+}
+
+.gharBadaWorks {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.gharIconGrp {
+    text-align: center;
+}
+
+.gharIconGrp .gharIconsInfo {
+    background-color: #0b9c98;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    line-height: 82px;
+}
+
+.gharIconGrp h6 {
+    font-weight: bolder;
+}
+
+.houseImg {
+    width: auto;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    position: relative;
+}
+
+.houseImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.houesGrp h6 {
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.houesGrp p {
+    font-size: 14px;
+    color: #6d6d6d;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+
+.houesGrp h5 {
+    font-weight: bolder;
+    color: #0b9c98;
+}
+
+.priceTag {
+    background-color: #f7b101;
+    padding: 3px 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+.houesGrp {
+    margin: 30px 0;
+    border: 1px solid #ececec;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.gharbadaContain {
+    margin: 70px 0;
+}
+
+.gharbadaContain h2 {
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 1px rgb(131, 131, 131);
+    outline: rgb(131, 131, 131);
+}
+
+.gharbadaContain .fa-check-circle {
+    font-size: 10px;
+}
+
+.houesGrp a {
+    text-decoration: none;
+    color: #000;
+}
+
+.houesGrp a:hover {
+    color: #0b9c98;
+}
+
+.houesGrp a:hover .houesGrp {
+    text-decoration: none;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+    transform: translateY(-1px);
+}
+
+.wrapper {
+    margin-top: 5.5pc;
+}
+
+.registerBox {
+    width: 40%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+    padding: 30px;
+}
+
+.registerBox h2,
+.postProperty h2,
+.detailUi h3 {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    color: #0b9c98;
+}
+
+.registerBox label,
+.postProperty label {
+    font-weight: bolder;
+    margin-top: 7px;
+    font-size: 13px;
+    text-align: right;
+    float: right;
+}
+
+.form-control:focus {
+    border-color: #0b9c98;
+    box-shadow: none;
+}
+
+.bhadaBnt {
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+.btn-bhadaBtn {
+    background-color: #0b9c98;
+    color: #fff;
+    padding: 10px 30px;
+}
+
+.alreadyAc {
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+.alreadyAc p {
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.alreadyAc a {
+    text-decoration: none;
+    color: #0b9c98;
+    font-weight: bold;
+}
+
+.alreadyAc a:hover {
+    color: #10c9c3;
+}
+
+.logBox {
+    margin: 8pc auto 4pc auto;
+}
+
+.postProperty {
+    width: 70%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+    padding: 30px;
+}
+
+.form-check-label {
+    text-align: left !important;
+    float: left !important;
+    padding-top: 0;
+    color: #6d6d6d;
+}
+
+.form-check-inline .form-check-input {
+    margin-top: 7px;
+}
+
+.detailUi {
+    margin-top: 40px;
+}
+
+.detailUi h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.gharbhadaSlide .slideImg {
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.gharbhadaSlide .slideImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.detialPageInfo p {
+    color: #6d6d6d;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.offeredPrice {
+    margin-bottom: 30px;
+}
+
+.offeredPrice h5 {
+    margin-bottom: 0;
+    padding: 0;
+    color: #6d6d6d;
+}
+
+.offeredPrice h1 {
+    color: #f44336;
+    font-weight: bolder;
+}
+
+.detialPageInfo label {
+    color: #000;
+    font-weight: bold;
+}
+
+.productDetails ul {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.productDetails li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.productDetails strong {
+    margin-right: 10px;
+}
+
+.detailLocation {
+    text-align: center;
+    color: #6d6d6d;
+    font-size: 13px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.gharLocation {
+    width: auto;
+    height: 550px;
+}
+
+.gharLocation iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-bookBtn {
+    float: right;
+}
+
+.btn-bookBtn {
+    border: 2px solid #0b9c98;
+    color: #6d6d6d;
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+.btn-bookBtn:hover {
+    color: #fff;
+    background-color: #0b9c98;
+    font-weight: 400;
+}
