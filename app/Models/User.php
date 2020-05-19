@@ -3,13 +3,13 @@
 namespace App\Models;
 use App\Traits\PresentableTrait;
 use Illuminate\Notifications\Notifiable;
-// use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, PresentableTrait;
+    use Notifiable, PresentableTrait, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
