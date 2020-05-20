@@ -1,10 +1,6 @@
 
 @extends('admin.dashboard-layout')
 
-@php 
-	$can_manage = authUser()->can('manage_users');
-@endphp
-
 @section('title')
 	Users
 @endsection
@@ -26,9 +22,7 @@
 			<div class="box">
 	            <div class="box-header">
 	              <h3 class="box-title">All users</h3>
-	              @if($can_manage)
 	              	<a href="{{ route('admin.users.create') }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</a>
-	              @endif
 	            </div>
 	            <!-- /.box-header -->
 	            <div class="box-body no-padding">

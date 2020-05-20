@@ -40,7 +40,7 @@
 			                        <tr>
 			                          <td>{{ ++$index }}</td>
 			                          <td>
-                                        {{ $property->name }}
+                                        {{ $property->title }}
 			                          </td>
 			                          <td>
 			                          	<img src="{{ $property->images->first() ? asset($property->images->first()->path) : '' }}" alt="" height="20" width="20">

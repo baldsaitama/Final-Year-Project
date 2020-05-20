@@ -20,9 +20,9 @@ class PropertyRepository extends Repository
 
 	public function store($request)
 	{
-		$inputs = $request->except(['images']);
+		$inputs = $request->except(['files']);
         $property = $this->create($inputs);
-		if($request->hasFile('images'))
+		if($request->hasFile('files'))
         {
 			foreach ($request->file('files') as $key => $file) {
                 $data = $this->uploadPhoto($file, "uploads/properties/{$property->id}", null, 499, 499);
@@ -41,7 +41,7 @@ class PropertyRepository extends Repository
 	public function renew($request, $property_id)
 	{
 		$property = $this->requiredById($property_id);
-		$inputs = $request->except(['images']);
+		$inputs = $request->except(['files']);
         $property->update($inputs);
         if($request->hasFile('files')){
 			foreach ($request->file('files') as $key => $file) {

@@ -33,7 +33,7 @@
                     <a class="nav-link" href="index.html#rentHouse">Rent</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route("create")}}">Post Property</a>
+                    <a class="nav-link" href="{{route('properties.create')}}">Post Property</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Requirements</a>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-lg-12 mb-4">
                     <div class="bhadaBnt">
-                        <buton type="submit" class="btn btn-bhadaBtn">Register</buton>
+                        <button type="submit" class="btn btn-bhadaBtn">Register</button>
                     </div>
                 </div>
                 <div class="col-lg-12 mb-4">

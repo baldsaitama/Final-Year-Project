@@ -1,19 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\General;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\UserRepository;
 
 class UsersController extends Controller
 {
-    protected $userRepo;
-
-    function __construct(UserRepository $userRepo)
-    {
-        $this->userRepo = $userRepo;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = $this->userRepo->paginate(null,20);
-
-        return view('admin.users.index', compact('users'));
+        //
     }
 
     /**
@@ -33,7 +24,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        //
     }
 
     /**
@@ -44,9 +35,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = $this->userRepo->store($request);
-
-        return redirect()->route('admin.users.index')->withStatus('User created');
+        //
     }
 
     /**
@@ -57,9 +46,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = $this->userRepo->requiredById($id);
-
-        return view('admin.users.show', compact('user'));
+        //
     }
 
     /**
@@ -70,8 +57,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->userRepo->requiredById($id);
-        return view('admin.users.edit', compact('user'));
+        //
     }
 
     /**
@@ -83,14 +69,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:125',
-            'profile_picture' => 'image|max:10240',
-        ]);
-        $user = $this->userRepo->requiredById($id);
-        $user = $this->userRepo->renew($user, $request);
-
-        return redirect()->route('admin.users.index')->withStatus('User updated');
+        //
     }
 
     /**
@@ -101,17 +80,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        return $this->userRepo->requiredById($id)->delete();
-    }
-
-    public function getLists(Request $request)
-    {
-        return $this->userRepo->getLists($request);
-    }
-
-    public function getList(Request $request, $id)
-    {
-
-       return $this->userRepo->getList($request, $id);
+        //
     }
 }

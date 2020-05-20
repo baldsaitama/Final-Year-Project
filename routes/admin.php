@@ -20,7 +20,32 @@ Route::group(['middleware' => 'verified'], function(){
     Route::get('/dashboard', 'DashboardController@dashboard')->name('admin.dashboard');
     
     //userscontroller
+    Route::get('users/get-lists', [
+		'as' => 'admin.users.getLists',
+		'uses' => 'UsersController@getLists'
+	]);
+
+	Route::get('users/get-lists/{user}', [
+		'as' => 'admin.users.getList',
+		'uses' => 'UsersController@getList'
+	]);
 	Route::resource('users', 'UsersController', ['as'=>'admin']);
-	Route::resource('amenities', 'AmenitiesController', ['as'=>'admin']);
+    Route::resource('amenities', 'AmenitiesController', ['as'=>'admin']);
+    //PropertiesController
+    Route::get('properties/{property}/images/get-images-lists', [
+		'as' => 'admin.properties.getImagesLists',
+		'uses' => 'PropertiesController@getImagesLists'
+	]);
+
+	Route::post('properties/{property}/images', [
+		'as' => 'admin.properties.uploadImage',
+		'uses' => 'PropertiesController@uploadImage'
+    ]);
+
+    Route::delete('properties/{property}/images/{image}', [
+		'as' => 'admin.properties.deleteImage',
+		'uses' => 'PropertiesController@deleteImage'
+	]);
+    
 	Route::resource('properties', 'PropertiesController', ['as'=>'admin']);
 });

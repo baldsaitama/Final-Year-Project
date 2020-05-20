@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\General;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +22,7 @@ class PropertiesController extends Controller
     public function index()
     {
         $properties = $this->propertyRepo->paginate(null,20);
-        return view('admin.properties.index',compact('properties'));
+        return view('general.properties.index',compact('properties'));
     }
 
     /**
@@ -32,7 +32,7 @@ class PropertiesController extends Controller
      */
     public function create()
     {
-        return view('admin.properties.create');
+        return view('general.properties.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class PropertiesController extends Controller
     public function store(Request $request)
     {
         $property = $this->propertyRepo->store($request);
-        return redirect()->route('admin.properties.index')->withStatus('Property Created');
+        return redirect()->route('properties.index')->withStatus('Property Created');
     }
 
     /**
@@ -55,7 +55,8 @@ class PropertiesController extends Controller
      */
     public function show($id)
     {
-        //
+        $property = $this->propertyRepo->requiredById($id);
+        return view('general.properties.show',compact('property'));
     }
 
     /**
@@ -67,7 +68,7 @@ class PropertiesController extends Controller
     public function edit($id)
     {
         $property = $this->propertyRepo->requiredById($id);
-        return view('admin.properties.edit',compact('property'));
+        return view('general.properties.edit',compact('property'));
     }
 
     /**
@@ -79,9 +80,8 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $property = $this->propertyRepo->renew($request,$id);
-        return redirect()->route('admin.properties.index')->withStatus('Property Updated');
-
+        $property = $this->propertyRepo->renew($request, $id);
+        return redirect()->route('properties.index')->withStatus('Property Updated');
     }
 
     /**
@@ -94,42 +94,6 @@ class PropertiesController extends Controller
     {
         $property = $this->propertyRepo->requiredById($id);
         $property->delete();
-        return redirect()->back()->withStatus('Property Deleted');
-    }
-
-    public function getImagesLists(Request $request, $property_id)
-    {
-        $property = $this->propertyRepo->requiredById($property_id);
-
-        return $property->images;
-    }
-
-
-    public function uploadImage(Request $request, $property_id)
-    {
-        $this->validate($request, [
-            'files' => 'required'
-        ]);
-
-        $property = $this->propertyRepo->uploadImage($request, $property_id);
-
-        if($request->ajax() || $request->wantsJson()){
-            return response()->json([
-                'status' => 'Image added to property',
-                'property' => $property->load('images')->toJson()
-            ]);
-        }
-    }
-
-    public function deleteImage(Request $request, $property_id, $image_id)
-    {
-        $property = $this->propertyRepo->deleteImage($request, $property_id, $image_id);
-
-        if($request->ajax() || $request->wantsJson()){
-            return response()->json([
-                'status' => 'Image deleted from property',
-                'property' => $property->load('images')->toJson()
-            ]);
-        }
+        return redirect()->route('properties.index')->withStatus('Property Deleted');
     }
 }

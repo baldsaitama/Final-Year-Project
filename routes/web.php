@@ -20,7 +20,8 @@ Route::group(['middleware' => 'verified'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::group(['namespace' => 'General'], function(){
 		Route::resource('users','UsersController');
+		Route::resource('properties','PropertiesController');
     });
-    Route::get('/create', 'Admin\PropertiesController@create')->name('create');
+    // Route::get('/create', 'Admin\PropertiesController@create')->name('create');
 });
 

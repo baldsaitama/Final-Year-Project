@@ -1,7 +1,7 @@
 <!-- navbar begins -->
 <div class="gharBhadaNavbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark container-fluid fixed-top">
-        <a class="navbar-brand" href="index.html">GHAR BHADA</a>
+        <a class="navbar-brand" href="{{url('/')}}">GHAR BHADA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,7 +14,7 @@
                     <a class="nav-link" href="#rentHouse">Rent</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route("create")}}">Post Property</a>
+                    <a class="nav-link" href="{{route('properties.create')}}">Post Property</a>
                 </li>
 
                 @auth
