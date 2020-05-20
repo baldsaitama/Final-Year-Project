@@ -48,12 +48,12 @@
             var scroll = new SmoothScroll('a[href*="#buyHouse"]', {
                 speed: 1500,
                 offset: 100,
-        
+
             });
             var scroll = new SmoothScroll('a[href*="#rentHouse"]', {
                 speed: 1500,
                 offset: 100,
-        
+
             });
         </script>
     @show

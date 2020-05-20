@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Property extends Model
 {
     use SoftDeletes;
-    
+
     protected $fillable = [
         'user_id',
         'status',
@@ -29,6 +29,7 @@ class Property extends Model
         'living_room',
         'title',
         'description',
+        'is_published',
     ];
 
 

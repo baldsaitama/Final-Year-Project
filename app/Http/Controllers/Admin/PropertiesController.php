@@ -81,7 +81,7 @@ class PropertiesController extends Controller
     {
         $property = $this->propertyRepo->renew($request,$id);
         return redirect()->route('admin.properties.index')->withStatus('Property Updated');
-        
+
     }
 
     /**

@@ -21,5 +21,6 @@ Route::group(['middleware' => 'verified'], function(){
 	Route::group(['namespace' => 'General'], function(){
 		Route::resource('users','UsersController');
     });
+    Route::get('/create', 'Admin\PropertiesController@create')->name('create');
 });
 

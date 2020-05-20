@@ -15,7 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->string('status');
             $table->string('type');
             $table->string('category');
@@ -33,6 +33,7 @@ class CreatePropertiesTable extends Migration
             $table->string('living_room');
             $table->string('title');
             $table->string('description');
+            $table->string('is_published');
             $table->timestamps();
             $table->softDeletes();
 

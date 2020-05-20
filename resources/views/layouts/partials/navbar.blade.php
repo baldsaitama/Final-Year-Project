@@ -14,11 +14,9 @@
                     <a class="nav-link" href="#rentHouse">Rent</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="postProperty.html">Post Property</a>
+                    <a class="nav-link" href="{{route("create")}}">Post Property</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Requirements</a>
-                </li> -->
+
                 @auth
                     <li class="nav-item">
                         <a class="nav-link logBtn" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
