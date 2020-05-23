@@ -14,7 +14,11 @@
                     <a class="nav-link" href="#rentHouse">Rent</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('properties.create')}}">Post Property</a>
+                    @auth
+                        @if (authUser()->user_type=='owner')
+                            <a class="nav-link" href="{{route('properties.create')}}">Post Property</a>
+                        @endif
+                    @endauth
                 </li>
 
                 @auth

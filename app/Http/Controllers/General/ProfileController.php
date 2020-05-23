@@ -4,16 +4,9 @@ namespace App\Http\Controllers\General;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\PropertyRepository;
 
-class PropertiesController extends Controller
+class ProfileController extends Controller
 {
-    protected $propertyRepo;
-
-    function __construct(PropertyRepository $propertyRepo)
-    {
-        $this->propertyRepo = $propertyRepo;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +14,7 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        $properties = $this->propertyRepo->paginate(null,20);
-        return view('general.properties.index',compact('properties'));
+        //
     }
 
     /**
@@ -32,14 +24,7 @@ class PropertiesController extends Controller
      */
     public function create()
     {
-        if (authUser()->user_type=='owner') {
-            if (authUser()->profile) {
-                return view('general.properties.create');
-            }
-            else {
-                return view('general.profiles.index');
-            }
-        }
+        //
     }
 
     /**
@@ -50,8 +35,7 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
-        $property = $this->propertyRepo->store($request);
-        return redirect()->route('properties.index')->withStatus('Property Created');
+        //
     }
 
     /**
@@ -62,8 +46,7 @@ class PropertiesController extends Controller
      */
     public function show($id)
     {
-        $property = $this->propertyRepo->requiredById($id);
-        return view('general.properties.show',compact('property'));
+        //
     }
 
     /**
@@ -74,8 +57,7 @@ class PropertiesController extends Controller
      */
     public function edit($id)
     {
-        $property = $this->propertyRepo->requiredById($id);
-        return view('general.properties.edit',compact('property'));
+        //
     }
 
     /**
@@ -87,8 +69,7 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $property = $this->propertyRepo->renew($request, $id);
-        return redirect()->route('properties.index')->withStatus('Property Updated');
+        //
     }
 
     /**
@@ -99,8 +80,6 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        $property = $this->propertyRepo->requiredById($id);
-        $property->delete();
-        return redirect()->route('properties.index')->withStatus('Property Deleted');
+        //
     }
 }
