@@ -30,6 +30,16 @@ Route::group(['middleware' => 'verified'], function(){
 		'uses' => 'UsersController@getList'
 	]);
 	Route::resource('users', 'UsersController', ['as'=>'admin']);
+	//AMenitiesController
+	Route::get('amenities/get-lists', [
+		'as' => 'admin.amenities.getLists',
+		'uses' => 'AmenitiesController@getLists'
+	]);
+
+	Route::get('amenities/get-lists/{amenity}', [
+		'uses' => 'AmenitiesController@getList'
+	]);
+
     Route::resource('amenities', 'AmenitiesController', ['as'=>'admin']);
     //PropertiesController
     Route::get('properties/{property}/images/get-images-lists', [

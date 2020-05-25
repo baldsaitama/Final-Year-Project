@@ -352,7 +352,27 @@
                                           </span>
                                       @enderror
                                 </div>
-                              </div>
+							  </div>
+							  <div class="col-md-6">
+								  <div class="form-group">
+									  	<label for="amenities">Amenities</label>
+									  	<select
+											class="form-control select2-lazy-list @error('amenities') is-invalid @enderror"
+											id="amenities"
+											data-placeholder="select amenities"
+											name="amenities[]"
+											multiple
+											data-tags="true"
+											data-tagsource="{{ route('admin.amenities.store') }}"
+											data-source="{{ route('admin.amenities.getLists') }}">
+										</select>
+										@error('amenities')
+											<span class="invalid-feedback" role="alert">
+												<strong>{{ $message }}</strong>
+											</span>
+										@enderror
+								  </div>
+							  </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Is property published?</label>
