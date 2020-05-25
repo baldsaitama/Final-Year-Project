@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->string('phone')->nullable();
             $table->string('profile_picture')->nullable();
+            $table->boolean('is_verified')->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
@@ -34,6 +35,7 @@ class CreateUsersTable extends Migration
             'email_verified_at' => now(),
             'user_type'              => 'system',
             'phone'             => '9861446462',
+            'is_verified'       =>'1',
         ]);
     }
 

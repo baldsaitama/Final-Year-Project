@@ -34,19 +34,12 @@ class UserRepository extends Repository
 		// $user->name = $request->first_name . ' ' . $request->last_name;
 		$user->email = $request->email;
 		$user->phone = $request->phone;
-		$user->type = $request->type;
-		$user->vendor_id = $request->vendor_id;
-		$user->nmc_no = $request->nmc_no;
-
+		$user->user_type = $request->user_type;
+		$user->is_verified = $request->is_verified;
 		$user->password = bcrypt($request->password);
 		$user->email_verified_at = now();
-		$user->phone_verified_at = now();
 
 		$user->save();
-
-		if($request->has('roles')){
-			$user->roles()->sync($request->roles);
-		}
 
 		return $user;
 	}
@@ -69,15 +62,9 @@ class UserRepository extends Repository
 			$user->password = Hash::make($request->password);
 		}
 
-		// dd($request->all());
-		$user->type = $request->type? :$user->type;
-		$user->nmc_no = $request->nmc_no;
-
+		$user->user_type = $request->user_type? :$user->user_type;
+		$user->is_verified = $request->is_verified;
 		$user->save();
-
-		if($request->has('roles')){
-			$user->roles()->sync($request->roles);
-		}
 
 		return $user;
 	}

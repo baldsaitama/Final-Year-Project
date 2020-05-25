@@ -83,7 +83,15 @@
 		    	                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
 	    	                </div>
 			            </div>
-			            <div class="clearfix"></div>
+						<div class="clearfix"></div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="is_verified">Verified User</label>
+								<input type="radio" name="is_verified" value="1">
+								<label for="is_verified">Not Verified User</label>
+								<input type="radio" name="is_verified" value="0" checked>
+							</div>
+						</div>
     		            <div class="col-md-6">
     		            	<div class="form-group">
     	    	                <label for="type">{{__('Type')}}</label>
