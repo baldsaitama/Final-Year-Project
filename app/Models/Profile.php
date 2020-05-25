@@ -12,7 +12,8 @@ class Profile extends Model
     protected $fillable = [
         'id',
         'user_id',
-        'citizenship_number',
+        'house_number',
+        'citizenship_image',
     ];
 
     public function user(){

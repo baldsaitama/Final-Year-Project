@@ -31,9 +31,12 @@ class CreatePropertiesTable extends Migration
             $table->string('bedroom');
             $table->string('bathroom');
             $table->string('living_room');
+            $table->string('is_published');
+            $table->string('price');
+            $table->string('price_unit');
             $table->string('title');
             $table->string('description');
-            $table->string('is_published');
+
             $table->timestamps();
             $table->softDeletes();
 

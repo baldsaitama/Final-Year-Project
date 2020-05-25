@@ -30,6 +30,8 @@ class Property extends Model
         'title',
         'description',
         'is_published',
+        'price',
+        'price_unit',
     ];
 
 
