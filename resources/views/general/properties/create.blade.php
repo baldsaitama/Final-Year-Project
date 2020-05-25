@@ -346,6 +346,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <input type="text" class="form-control" id="search" placeholder="Search....">
+                    <input type = "text" name="display_address" class="form-control mt-1 mb-1" disabled>
+
+                    <div id="map" class="mb-3">
+
+                    </div>
+                    <input type = "hidden" name="address_line_1" >
+                    <input type = "hidden" name="longitude">
+                    <input type = "hidden" name="latitude">
+
                     <div class="col-lg-12">
                         <div class="bhadaBnt">
                             <button class="btn btn-bhadaBtn">Submit</button>
