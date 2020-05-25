@@ -64,7 +64,15 @@
     	    	                    </span>
     	    	                @enderror
         	                </div>
-    		            </div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="is_verified">Verified User</label>
+								<input type="radio" name="is_verified" value="1" {{$user->is_verified==1?'checked':''}}>
+								<label for="is_verified">Not Verified User</label>
+								<input type="radio" name="is_verified" value="0" {{$user->is_verified==0?'checked':''}}>
+							</div>
+						</div>
     		            <div class="col-md-6">
     		            	<div class="form-group">
     	    	                <label for="type">{{__('Type')}}</label>
@@ -101,7 +109,18 @@
         	                @if($user->profile_picture)
 								<img src="{{ $user->present()->profilePicture }}" alt="">
         	                @endif
-    		            </div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								@if ($user->profile)
+									House Number:
+									{{$user->profile->house_number}}
+									<a href="{{asset($user->profile->citizenship_image)}}" download="citizenship.jpg">
+										<img src="{{asset($user->profile->citizenship_image)}}" alt="" height="100" width="100">
+									</a>
+								@endif
+							</div>
+						</div>
 		            </div>
 		            <div class="box-footer">
 						<div class="pull-right">

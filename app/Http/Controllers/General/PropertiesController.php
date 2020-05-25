@@ -33,7 +33,7 @@ class PropertiesController extends Controller
     public function create()
     {
         if (authUser()->user_type=='owner') {
-            if (authUser()->profile) {
+            if (authUser()->is_verified==1) {
                 return view('general.properties.create');
             }
             else {

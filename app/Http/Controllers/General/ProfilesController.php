@@ -4,9 +4,16 @@ namespace App\Http\Controllers\General;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\Eloquent\ProfileRepository;
 
-class ProfileController extends Controller
+class ProfilesController extends Controller
 {
+    protected $profileRepo;
+
+    function __construct(ProfileRepository $profileRepo)
+    {
+        $this->profileRepo = $profileRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +42,8 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $profile = $this->profileRepo->store($request);
+        return redirect()->route('welcome')->withStatus('Profile Created');
     }
 
     /**

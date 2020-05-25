@@ -387,7 +387,19 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="price">Price</label>
+									<input type="number" name="price">
+									<label for="price_unit">Unit</label>
+									<select name="price_unit">Price Unit
+										<option value="npr">NPR</option>
+										<option value="inr">INR</option>
+										<option value="usd">USD</option>
+									</select>
+								</div>
+							</div>
         		            <div class="col-md-12">
         		            	<label for="tags">Properties Images</label>
         		            	<div class="form-froup">
