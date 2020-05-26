@@ -35,15 +35,20 @@
     </div>
 
     @section('javascripts')
-        <script type="text/javascript" src="js/jQuery.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="js/gharBhadaScrollTop.js"></script>
-        <script type="text/javascript" src="js/wow.js"></script>
+        <script>
+            const BASE_URL = "{{ url('/') }}";
+            const CURRENT_URL = "{{ url()->current() }}";
+        </script>
+        <script type="text/javascript" src="{{asset('js/jQuery.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+        {{-- <script type="text/javascript" src="{{asset('js/gharBhadaScrollTop.js')}}"></script> --}}
+        <script type="text/javascript" src="{{asset('js/wow.js')}}"></script>
         <script>
             new WOW().init();
         </script>
-        <script src="js/smooth-scroll.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+        <script src="{{asset('js/smooth-scroll.js')}}"></script>
         <script type="text/javascript">
             var scroll = new SmoothScroll('a[href*="#buyHouse"]', {
                 speed: 1500,
@@ -63,10 +68,10 @@
         </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
         </script>
-        <script src="{{asset('js/imageUpload.js')}}"></script>
-        <script>
+        {{-- <script src="{{asset('js/imageUpload.js')}}"></script> --}}
+        {{-- <script>
             (function(){var options={};$('.js-uploader__box').uploader(options);}());
-        </script>
+        </script> --}}
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -90,7 +95,7 @@
 
 
 
-        <script>
+        {{-- <script>
             $('#createPostModal').on('show.bs.modal', function(e){
                 var modal = $(this)
                 console.log("sagar");
@@ -179,8 +184,9 @@
                 }
             }
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_-5XwAG2EqiuzpFLEUK0ZX-P5Bgm9Yk&libraries=places" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_-5XwAG2EqiuzpFLEUK0ZX-P5Bgm9Yk&libraries=places" async defer></script> --}}
 
+    @include('admin.partials.alert')
     @show
 </body>
 </html>
