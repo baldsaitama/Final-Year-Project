@@ -29,7 +29,7 @@
                                 <label>Property Status</label>
                             </div>
                             <div class="col-8">
-                                <select class="form-control">
+                                <select class="form-control" name="propoerty_status">
                                     <option class="rent" value="rent">
                                         Rent
                                     </option>
@@ -47,23 +47,23 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="house" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">House</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="flat" id="inlineRadio2" value="option2">
                                     <label class="form-check-label" for="inlineRadio2">Flat</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <input class="form-check-input" type="radio" name="room" id="inlineRadio3" value="option3">
                                     <label class="form-check-label" for="inlineRadio3">Room</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <input class="form-check-input" type="radio" name="apartment" id="inlineRadio4" value="option4">
                                     <label class="form-check-label" for="inlineRadio4">Apartment</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <input class="form-check-input" type="radio" name="office_space" id="inlineRadio5" value="option5">
                                     <label class="form-check-label" for="inlineRadio5">Office Space</label>
                                 </div>
 
@@ -73,15 +73,15 @@
                     <div class="col-lg-12 mb-4">
                         <div class="row">
                             <div class="col-4">
-                                <label>Category</label>
+                                <label>Purpose</label>
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
-                                    <label class="form-check-label" for="inlineRadio6">Residental</label>
+                                    <input class="form-check-input" type="radio" name="residential" id="inlineRadio6" value="option6">
+                                    <label class="form-check-label" for="inlineRadio6">Residential</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option7">
+                                    <input class="form-check-input" type="radio" name="commercial" id="inlineRadio7" value="option7">
                                     <label class="form-check-label" for="inlineRadio7">Commercial</label>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                 <label>Property Face Option</label>
                             </div>
                             <div class="col-8">
-                                <select class="form-control">
+                                <select class="form-control" name="property_face">
                                     <option class="east" value="east">
                                         East
                                     </option>
@@ -116,10 +116,10 @@
                                 <label style="float: none; text-align: center;">Road :</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" placeholder="Length">
+                                <input type="text" class="form-control" placeholder="Length" name="road_length">
                             </div>
                             <div class="col-4">
-                                <select class="form-control">
+                                <select class="form-control" name="length_unit">
                                     <option class="roadType" value="" disabled="disabled" selected="true">
                                         Unit
                                     </option>
@@ -132,7 +132,7 @@
                                 </select>
                             </div>
                             <div class="col-4">
-                                <select class="form-control">
+                                <select class="form-control" name="road_type">
                                     <option class="roadType" value="roadType" disabled="disabled" selected="true">
                                         Road Type
                                     </option>
@@ -155,7 +155,7 @@
                                 <label style="float: none; text-align: center;">Built Year :</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" placeholder="e.g. 2077">
+                                <input type="text" class="form-control" placeholder="e.g. 2077" name="built_year">
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                                 <label>Furnishing</label>
                             </div>
                             <div class="col-8">
-                                <select class="form-control">
+                                <select class="form-control" name="furnish">
                                     <option class="furnish" value="" disabled="disabled" selected="true">
                                         Furnish
                                     </option>
@@ -194,23 +194,23 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="opt1" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="opt2" id="inlineRadio2" value="option2">
                                     <label class="form-check-label" for="inlineRadio2">2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <input class="form-check-input" type="radio" name="opt3" id="inlineRadio3" value="option3">
                                     <label class="form-check-label" for="inlineRadio3">3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <input class="form-check-input" type="radio" name="opt4" id="inlineRadio4" value="option4">
                                     <label class="form-check-label" for="inlineRadio4">4</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <input class="form-check-input" type="radio" name="opt5" id="inlineRadio5" value="option5">
                                     <label class="form-check-label" for="inlineRadio5">5</label>
                                 </div>
 
@@ -225,23 +225,23 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="opt1" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="opt2" id="inlineRadio2" value="option2">
                                     <label class="form-check-label" for="inlineRadio2">2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <input class="form-check-input" type="radio" name="opt3" id="inlineRadio3" value="option3">
                                     <label class="form-check-label" for="inlineRadio3">3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <input class="form-check-input" type="radio" name="opt4" id="inlineRadio4" value="option4">
                                     <label class="form-check-label" for="inlineRadio4">4</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <input class="form-check-input" type="radio" name="opt5" id="inlineRadio5" value="option5">
                                     <label class="form-check-label" for="inlineRadio5">5</label>
                                 </div>
 
@@ -256,23 +256,23 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="opt1" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="opt2" id="inlineRadio2" value="option2">
                                     <label class="form-check-label" for="inlineRadio2">2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <input class="form-check-input" type="radio" name="opt3" id="inlineRadio3" value="option3">
                                     <label class="form-check-label" for="inlineRadio3">3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <input class="form-check-input" type="radio" name="opt4" id="inlineRadio4" value="option4">
                                     <label class="form-check-label" for="inlineRadio4">4</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <input class="form-check-input" type="radio" name="opt5" id="inlineRadio5" value="option5">
                                     <label class="form-check-label" for="inlineRadio5">5</label>
                                 </div>
 
@@ -287,23 +287,23 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="opt1" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="opt2" id="inlineRadio2" value="option2">
                                     <label class="form-check-label" for="inlineRadio2">2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <input class="form-check-input" type="radio" name="opt3" id="inlineRadio3" value="option3">
                                     <label class="form-check-label" for="inlineRadio3">3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <input class="form-check-input" type="radio" name="opt4" id="inlineRadio4" value="option4">
                                     <label class="form-check-label" for="inlineRadio4">4</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                    <input class="form-check-input" type="radio" name="opt5" id="inlineRadio5" value="option5">
                                     <label class="form-check-label" for="inlineRadio5">5</label>
                                 </div>
 
@@ -317,7 +317,7 @@
                                 <label>Property Title</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control" placeholder="e.g. Sunshin Apartment for Sale">
+                                <input type="text" class="form-control" placeholder="e.g. Sunshin Apartment for Sale" name="title">
                             </div>
                         </div>
                     </div>
@@ -328,7 +328,7 @@
                                 <label>Description</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control" placeholder="Describe your property">
+                                <input type="text" class="form-control" placeholder="Describe your property" name="description">
                             </div>
                         </div>
                     </div>
@@ -339,10 +339,10 @@
                                 <label style="float: none; text-align: center;">Price :</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" placeholder="Enter Price">
+                                <input type="text" class="form-control" placeholder="Enter Price" name="price">
                             </div>
                             <div class="col-4">
-                                <select class="form-control">
+                                <select class="form-control" name="price_unit">
                                     <option class="priceunit" value="" disabled="disabled" selected="true">
                                         Price Unit
                                     </option>
@@ -360,12 +360,12 @@
                         </div>
                     </div>
 
-                    <input type="text" class="form-control" id="search" placeholder="Search....">
+                    <input type="text" class="form-control" id="search" placeholder="Search...." name="search_location">
                     <div id="map" class="mb-3">
 
                     </div>
                     <input type="text" name="display_address" id="display-address" class="form-control" disabled>
-                    <input type = "hidden" name="address_line_1" >
+                    <input type = "hidden" name="address_line_1">
                     <input type = "hidden" name="longitude">
                     <input type = "hidden" name="latitude">
 
@@ -429,11 +429,11 @@
             map = new google.maps.Map(document.getElementById('map'), options);
             var input = document.getElementById('search');
             var searchBox = new google.maps.places.Autocomplete(input, restriction);
-            
+
             var marker = new google.maps.Marker({
                 map:map,
                 position: markerCoordinates,
-                draggable: true 
+                draggable: true
             });
             var geocoder = new google.maps.Geocoder();
 
@@ -443,7 +443,7 @@
                     card.find('input[name=address_line_1]').val(address);
                     card.find('input[name=display_address]').val(address);
                 }
-            })      
+            })
             map.addListener('bounds_changed',function(){
                 searchBox.setBounds(map.getBounds());
             });

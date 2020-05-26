@@ -15,7 +15,7 @@
                             <label for="name">Full Name</label>
                         </div>
                         <div class="col-8">
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter Full Name">
+                            <input id="namce" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter Full Name">
 
                             @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -34,6 +34,23 @@
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter Email Address">
 
                             @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 mb-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="name">Phone Number</label>
+                        </div>
+                        <div class="col-8">
+                            <input id="phone_number" type="text" class="form-control @error('name') is-invalid @enderror" name="phone_number" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter Phone Nnmber">
+
+                            @error('name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -73,7 +90,10 @@
                             <label for="user_type">User Type</label>
                         </div>
                         <div class="col-8">
-                            <select name="user_type" class="form-control">
+                            <select name="user_type" class="form-control" required>
+                                <option value="" disabled="disabled" selected="true">
+                                    Select User Types
+                                </option>
                                 <option class="owner" value="owner">
                                     Owner
                                 </option>
