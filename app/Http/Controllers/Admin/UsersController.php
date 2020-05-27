@@ -5,14 +5,17 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Eloquent\ProfileRepository;
 
 class UsersController extends Controller
 {
     protected $userRepo;
+    protected $profileRepo;
 
-    function __construct(UserRepository $userRepo)
+    function __construct(UserRepository $userRepo, ProfileRepository $profileRepo)
     {
         $this->userRepo = $userRepo;
+        $this->profileRepo = $profileRepo;
     }
     /**
      * Display a listing of the resource.
@@ -113,5 +116,12 @@ class UsersController extends Controller
     {
 
        return $this->userRepo->getList($request, $id);
+    }
+
+    public function deleteProfile($profile_id)
+    {
+        $profile = $this->profileRepo->requiredById($profile_id);
+        $profile->delete();
+        return redirect()->back()->withStatus('Profile Rejected');
     }
 }

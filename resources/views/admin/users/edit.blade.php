@@ -110,17 +110,7 @@
 								<img src="{{ $user->present()->profilePicture }}" alt="">
         	                @endif
 						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								@if ($user->profile)
-									House Number:
-									{{$user->profile->house_number}}
-									<a href="{{asset($user->profile->citizenship_image)}}" download="citizenship.jpg">
-										<img src="{{asset($user->profile->citizenship_image)}}" alt="" height="100" width="100">
-									</a>
-								@endif
-							</div>
-						</div>
+						
 		            </div>
 		            <div class="box-footer">
 						<div class="pull-right">
@@ -128,9 +118,47 @@
 							<button type="submit" class="btn btn-success">Save</button>
 						</div>
 		        	</div>
-		        </form>
+				</form>
+				<div class="col-md-6">
+					<div class="form-group">
+						@if ($user->profile)
+							House Number:
+							{{$user->profile->house_number}}
+							<a href="{{asset($user->profile->citizenship_image)}}" download="citizenship.jpg">
+								<img src="{{asset($user->profile->citizenship_image)}}" alt="" height="100" width="100">
+							</a>
+							{!! getDeleteForm(route('admin.users.deleteProfile', $user->profile->id), "Delete user profile?", "Are you sure you want to delete this user profile", 'btn btn-flat ink-reaction text-danger', 'fa fa-archive') !!}
+						@endif
+					</div>
+				</div>
 	        </div>
 		</div>
 	</div>
+@endsection
+
+@section('javascripts')
+	@parent
+	<script>
+		$('.confirm-delete').on('click', function(e){
+			e.preventDefault();
+
+			var title = $(this).data('title');
+			var text = $(this).data('text');
+			var form = $(this).next('.delete-form');
+			var route = form.attr('action');			
+
+			confirmWithCallback(title, text, (function(result) {
+            	$.ajax({
+            		url: route,
+            		method: 'GET',
+            	}).done(function(response){
+        			form.closest('div').remove();
+	               	toastr.success('Profile rejected');
+	           }).fail(function(response) {
+        			toastr.success('Problem rejecting profile');
+        		});
+          }));
+		});
+	</script>
 @endsection
 

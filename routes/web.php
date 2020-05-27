@@ -20,6 +20,10 @@ Route::group(['middleware' => 'verified'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::group(['namespace' => 'General'], function(){
 		Route::resource('users','UsersController');
+		Route::get('/properties/buy-rent', [
+			'as' => 'properties.search',
+			'uses' => 'PropertiesController@search'
+		]);
 		Route::resource('properties','PropertiesController');
 		Route::resource('profiles','ProfilesController');
     });

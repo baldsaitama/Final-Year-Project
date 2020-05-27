@@ -103,4 +103,9 @@ class PropertiesController extends Controller
         $property->delete();
         return redirect()->route('properties.index')->withStatus('Property Deleted');
     }
+
+    public function search(Request $request)
+    {
+        return view('general.properties.buyrent');
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Repositories\Eloquent;
 
+use Notification;
+use App\Notifications\User\ProfileCreatedMail;
 /**
  * 
  */
@@ -20,6 +22,7 @@ class ProfileRepository extends Repository
 
 	public function store($request)
 	{
+		$admins = \App\Models\User::where('user_type','system')->get();
 		$inputs = $request->except(['image']);
 		if($request->hasFile('image'))
         {
@@ -28,7 +31,8 @@ class ProfileRepository extends Repository
             $inputs['citizenship_image'] = $data['photo_path'];
 		}
 
-        $profile = $this->create($inputs);
+		$profile = $this->create($inputs);
+		Notification::send($admins, new ProfileCreatedMail($profile));
 		return $profile;
 	}
 

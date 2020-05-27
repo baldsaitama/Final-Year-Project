@@ -29,6 +29,10 @@ Route::group(['middleware' => 'verified'], function(){
 		'as' => 'admin.users.getList',
 		'uses' => 'UsersController@getList'
 	]);
+	Route::get('users/delete-profile/{profile}', [
+		'as' => 'admin.users.deleteProfile',
+		'uses' => 'UsersController@deleteProfile'
+	]);
 	Route::resource('users', 'UsersController', ['as'=>'admin']);
 	//AMenitiesController
 	Route::get('amenities/get-lists', [
