@@ -6,6 +6,8 @@
 
 @section('stylesheets')
     @parent
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
     <style>
         #map{
             height:250px;
@@ -18,7 +20,8 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="{{ route('create') }}">
+    <form method="POST" action="{{ route('properties.store') }}" id="createPropertyForm">
+        @csrf
         <div class="wrapper">
             <div class="container-fluid">
                 <div class="postProperty">
@@ -30,7 +33,7 @@
                                     <label>Property Status</label>
                                 </div>
                                 <div class="col-8">
-                                    <select class="form-control" name="propoerty_status">
+                                    <select class="form-control" name="status">
                                         <option class="rent" value="rent">
                                             Rent
                                         </option>
@@ -48,23 +51,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="house_category" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="house">
                                         <label class="form-check-label" for="inlineRadio1">House</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="house_category" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="flat">
                                         <label class="form-check-label" for="inlineRadio2">Flat</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="house_category" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="room">
                                         <label class="form-check-label" for="inlineRadio3">Room</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="house_category" id="inlineRadio4" value="option4">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio4" value="apartment">
                                         <label class="form-check-label" for="inlineRadio4">Apartment</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="house_category" id="inlineRadio5" value="option5">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio5" value="office space">
                                         <label class="form-check-label" for="inlineRadio5">Office Space</label>
                                     </div>
 
@@ -78,13 +81,30 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="purpose" id="inlineRadio6" value="option6">
+                                        <input class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental">
                                         <label class="form-check-label" for="inlineRadio6">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="purpose" id="inlineRadio7" value="option7">
+                                        <input class="form-check-input" type="radio" name="type" id="inlineRadio7" value="commercial">
                                         <label class="form-check-label" for="inlineRadio7">Commercial</label>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label>Amenities</label>
+                                </div>
+                                <div class="col-8">
+                                    <select
+                                        class="form-control select2-lazy-list @error('amenities') is-invalid @enderror"
+                                        id="amenities"
+                                        data-placeholder="select amenities"
+                                        name="amenities[]"
+                                        multiple
+                                        data-source="{{ route('amenities.getLists') }}">
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -117,13 +137,11 @@
                                     <label style="float: none; text-align: center;">Road :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="text" class="form-control" placeholder="Length" name="road_length">
+                                    <input type="text" class="form-control" placeholder="Length" name="road_width">
                                 </div>
                                 <div class="col-4">
-                                    <select class="form-control" name="length_unit">
-                                        <option class="roadType" value="" disabled="disabled" selected="true">
-                                            Unit
-                                        </option>
+                                    <label for="unit">Unit</label>
+                                    <select class="form-control" name="road_unit">
                                         <option class="feet" value="feet">
                                             Feet
                                         </option>
@@ -133,10 +151,8 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
+                                    <label for="road_type">Road Type</label>
                                     <select class="form-control" name="road_type">
-                                        <option class="roadType" value="roadType" disabled="disabled" selected="true">
-                                            Road Type
-                                        </option>
                                         <option class="roadType" value="blacktopped">
                                             Black Topped
                                         </option>
@@ -167,9 +183,6 @@
                                 </div>
                                 <div class="col-8">
                                     <select class="form-control" name="furnish">
-                                        <option class="furnish" value="" disabled="disabled" selected="true">
-                                            Furnish
-                                        </option>
                                         <option class="furnish" value="unfurnished">
                                             Unfurnished
                                         </option>
@@ -178,9 +191,6 @@
                                         </option>
                                         <option class="furnish" value="wellfurnished">
                                             Well-Furnished
-                                        </option>
-                                        <option class="southWest" value="southWest">
-                                            South West
                                         </option>
                                     </select>
                                 </div>
@@ -195,23 +205,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio2" value="2">
                                         <label class="form-check-label" for="inlineRadio2">2</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio3" value="3">
                                         <label class="form-check-label" for="inlineRadio3">3</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio4" value="option4">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio4" value="4">
                                         <label class="form-check-label" for="inlineRadio4">4</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio5" value="option5">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio5" value="5">
                                         <label class="form-check-label" for="inlineRadio5">5</label>
                                     </div>
 
@@ -226,23 +236,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio2" value="2">
                                         <label class="form-check-label" for="inlineRadio2">2</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio3" value="3">
                                         <label class="form-check-label" for="inlineRadio3">3</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio4" value="option4">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio4" value="4">
                                         <label class="form-check-label" for="inlineRadio4">4</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio5" value="option5">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio5" value="5">
                                         <label class="form-check-label" for="inlineRadio5">5</label>
                                     </div>
 
@@ -257,23 +267,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="l_room" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="l_room" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio2" value="2">
                                         <label class="form-check-label" for="inlineRadio2">2</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="l_room" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio3" value="3">
                                         <label class="form-check-label" for="inlineRadio3">3</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="l_room" id="inlineRadio4" value="option4">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio4" value="4">
                                         <label class="form-check-label" for="inlineRadio4">4</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="l_room" id="inlineRadio5" value="option5">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio5" value="5">
                                         <label class="form-check-label" for="inlineRadio5">5</label>
                                     </div>
 
@@ -288,26 +298,45 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio2" value="2">
                                         <label class="form-check-label" for="inlineRadio2">2</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio3" value="3">
                                         <label class="form-check-label" for="inlineRadio3">3</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio4" value="option4">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio4" value="4">
                                         <label class="form-check-label" for="inlineRadio4">4</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio5" value="option5">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio5" value="5">
                                         <label class="form-check-label" for="inlineRadio5">5</label>
                                     </div>
 
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 mb-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label>Publish</label>
+                                </div>
+                                <div class="col-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="is_published" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="is_published" value="0">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -329,7 +358,7 @@
                                     <label>Description</label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" placeholder="Describe your property" name="description">
+                                    <textarea type="text" class="form-control" placeholder="Describe your property" name="description"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -343,10 +372,8 @@
                                     <input type="text" class="form-control" placeholder="Enter Price" name="price">
                                 </div>
                                 <div class="col-4">
+                                    <label for="price_unit">Price Unit</label>
                                     <select class="form-control" name="price_unit">
-                                        <option class="priceunit" value="" disabled="disabled" selected="true">
-                                            Price Unit
-                                        </option>
                                         <option class="priceunit" value="permonth">
                                             Per Month
                                         </option>
@@ -360,6 +387,18 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="row">
+                                <div class="col-lg-12 mb-1">
+                                    <label style="float: none; text-align: center;">Image :</label>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-froup">
+                                        <div class="dropzone" id="my-awesome-dropzone"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <input type="text" class="form-control" id="search" placeholder="Search...." name="search_location">
                         <div id="map" class="mb-3">
@@ -369,6 +408,7 @@
                         <input type = "hidden" name="address_line_1">
                         <input type = "hidden" name="longitude">
                         <input type = "hidden" name="latitude">
+                        <input type = "hidden" name="user_id" value="{{authUser()->id}}">
 
                         <div class="col-lg-12">
                             <div class="bhadaBnt">
@@ -384,8 +424,10 @@
 
         @section('javascripts')
             @parent
+	        <script src="{{ asset('js/dropzone.js') }}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.js"></script>
             <script>
-                var card = $('#homestay-edit-box');
+                var card = $('#create-property-box');
                 $lat_val = $('#latitude').val();
                 $lng_val = $('#longitude').val();
                 $lat_val = parseFloat($lat_val);
@@ -505,5 +547,164 @@
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_-5XwAG2EqiuzpFLEUK0ZX-P5Bgm9Yk&callback=initializeGoogleMap&libraries=places"
                     async defer>
+            </script>
+            <script>
+                $(".select2-lazy-list").each(function(){
+                    var $this = $(this);
+                    var placeholder = $this.data('placeholder') || "Search for a repository";
+                    var multiple = false;
+                    if($this.data('multiple') == true || $this.data('multiple') == 'multiple' || $this.attr('multiple') == true || $this.attr('multiple') == 'multiple'){
+                        multiple = true;
+                    }
+
+                    $this.select2({
+                        placeholder: placeholder,
+                        allowClear: true,
+                        delay: 250,
+                        ajax: { 
+                            url: $this.data('source'),
+                            dataType: 'json',
+                            quietMillis: 250,
+                            data: function (params) {
+                                return {
+                                    q: params.term,
+                                    page: params.page || 1,
+                                    id: $this.data('id')
+                                };
+                            },
+                            
+                                processResults: function (data, params) {
+                                    params.page = params.page || 1;
+
+                            return {
+                                results: data.items,
+                                pagination: {
+                                    more: (params.page * 30) < data.total
+                                }
+                            };
+                            },
+                            cache: true
+                        },
+                        multiple: multiple,
+                        escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+                    });
+                    if($this.data('value')){
+                        $.ajax({
+                            type: 'GET',
+                            url: $this.data('source') + '/' + $this.data('value')
+                        }).then(function (data) {
+                            if(multiple && data.length > 0){
+                            for(var i=0; i < data.length; i++){
+                                var option = new Option(data[i].text, data[i].id, true, true);
+                                $this.append(option).trigger('change');
+                            }
+                            }else{
+                            var option = new Option(data.text, data.id, true, true);
+                            $this.append(option).trigger('change');
+                            }
+                            // manually trigger the select2:select event
+                            $this.trigger({
+                                type: 'select2:select',
+                                params: {
+                                    data: data
+                                }
+                            });
+                        });
+                    }
+                })
+            </script>
+
+            <script>
+                var productCreateBox = $('#create-property-box');
+                Dropzone.options.myAwesomeDropzone = {
+                    autoProcessQueue: false,
+                    url: "{{ route('properties.store') }}",
+                    paramName: "files",
+                    maxFilesize: 8, 
+                    addRemoveLinks: true,
+                    uploadMultiple: true,
+                    acceptedFiles: 'image/*',
+                    init: function () {
+
+                        var myDropzone = this;
+
+                        $("button[type=submit]").click(function (e) {
+                            e.preventDefault();
+                            addCardLoader(productCreateBox);
+
+                            var submitForm = true;
+                            $("input[required]").each(function(){
+                                var $this = $(this);
+                                if(!$this.val()){
+                                    submitForm = false;
+                                    toastr.error($this.attr('name').split('_').join(' ')  + ' is required');
+                                    $this.addClass('is-invalid');
+                                }
+                            });
+
+                            $("select[required]").each(function(){
+                                var $this = $(this);
+                                if(!$this.val()){
+                                    submitForm = false;
+                                    toastr.error($this.attr('name').split('_').join(' ') + ' is required');
+                                    $this.siblings('span.select2').addClass('invalid-select2');
+                                }
+                            });
+
+                            if(myDropzone.getQueuedFiles().length >0 && submitForm){
+                                myDropzone.processQueue();
+                            }else if (submitForm) {
+                                $('#createPropertyForm').submit();
+                            }else{
+                                removeCardLoader(productCreateBox);
+                                toastr.error('Please select at least one file');
+                            }
+                        });
+
+                        this.on('sending', function(file, xhr, formData) {
+                            var data = $('#createPropertyForm').serializeArray();
+                            $.each(data, function(key, el) {
+                                formData.append(el.name, el.value);
+                            });
+                        });
+                        
+                        this.on('success', function(file, response){
+                            toastMessage(response);
+                            window.location.href = "{{ route('properties.index') }}";
+                        });
+
+                        this.on('error', function(file, response, xhr){
+                            this.removeFile(file)
+
+                            new File([file], file.name, { type: file.type });
+                            this.addFile(file);
+
+                            if(xhr.status === 422) {
+                            $.each(response.errors, function(key, error) {
+                                toastr.error(error[0]);
+                            });
+                            }
+
+                            if(xhr.status === 500) {
+                                toastr.error('Internal server error');
+                            }
+
+                            if(xhr.status === 404){
+                                toastr.error(response.message);
+                            }
+                        });
+
+                        this.on('complete', function(){
+                            removeCardLoader(productCreateBox);
+                        });
+                    }
+                };
+
+                $("input[required]").on('focus', function(e){
+                    $(this).removeClass('is-invalid')
+                });
+                $("select[required]").on('focus, click, change', function(e){
+                    $(this).siblings('span.select2').removeClass('invalid-select2')
+                });
             </script>
 @endsection

@@ -21,9 +21,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        .select2-results__option[aria-selected=true] {
+          display: none;
+        }
+    </style>
     @show
 
 </head>
@@ -63,7 +69,8 @@
         </script>
 
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="{{ asset('js/hamro-front-end.js') }}"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
         </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
