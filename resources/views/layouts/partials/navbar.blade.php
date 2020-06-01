@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('properties.search')}}">Buy</a>
+                    <a class="nav-link" href="{{route('properties.search',['status'=>'sale'])}}">Buy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('properties.search')}}">Rent</a>
+                    <a class="nav-link" href="{{route('properties.search',['status'=>'rent'])}}">Rent</a>
                 </li>
                 <li class="nav-item">
                     @auth

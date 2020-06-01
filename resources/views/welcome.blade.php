@@ -11,8 +11,8 @@
                 <h1 class="wow fadeInLeft" data-wow-duration="1s">Looking For A Property?</h1>
                 <p class="wow fadeInLeft mt-2" data-wow-duration="1s" data-wow-delay="0.5s">Search your dream home on Nepal’s largest property marketplace
                 </p>
-                <form class="wow fadeInLeft " data-wow-duration="1s" data-wow-delay="0.9s">
-                    <input class="form-control " name="seachGhar" placeholder="Enter an address, town or property ID">
+                <form class="wow fadeInLeft " data-wow-duration="1s" data-wow-delay="0.9s" action="{{route('properties.search')}}" method="GET">
+                    <input class="form-control " name="s" placeholder="Enter an address, town or property ID">
                     <span>
                         <button><i class="fa fa-search"></i></button>
                     </span>
@@ -66,58 +66,21 @@
                 <div class="col-lg-12">
                     <h2>Houses Nearby</h2>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
+                @foreach ($buyingHouses as $buyingHouse)
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="houesGrp">
+                            <a href="{{route('properties.show',$buyingHouse->id)}}">
+                                <div class="houseImg">
+                                    <img src="{{asset($buyingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
+                                    <span class="priceTag">Rs. {{$buyingHouse->price}}</span>
+                                </div>
+                                <h6>{{$buyingHouse->title}}</h6>
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
+                                <!-- <h5>Rs. 2,70,00,000</h5> -->
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -127,58 +90,21 @@
                 <div class="col-lg-12">
                     <h2>Rented Houses Nearby</h2>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
+                @foreach ($rentingHouses as $rentingHouse)
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="houesGrp">
+                            <a href="{{route('properties.show',$rentingHouse->id)}}">
+                                <div class="houseImg">
+                                    <img src="{{asset($rentingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
+                                    <span class="priceTag">Rs. {{$rentingHouse->price}}</span>
+                                </div>
+                                <h6>{{$rentingHouse->title}}</h6>
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
+                                <!-- <h5>Rs. 2,70,00,000</h5> -->
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                    <div class="houesGrp">
-                        <a href="detailPage.html">
-                            <div class="houseImg">
-                                <img src="images/banner.jpg">
-                                <span class="priceTag">Rs. 2,70,00,000</span>
-                            </div>
-                            <h6>Kayabinyak Homes : House for sale</h6>
-                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                            <!-- <h5>Rs. 2,70,00,000</h5> -->
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
