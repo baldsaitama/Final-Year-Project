@@ -21,12 +21,9 @@
                     @auth
                         <div class="col-lg-3">
                             <div class="bookButton">
-                                <form action="{{route('bookings.store')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="user_id" value="{{authUser()->id}}">
-                                    <input type="hidden" name="property_id" value="{{$property->id}}">
-                                    <button type="submit" class="btn btn-bookBtn">Book Now</button>
-                                </form>
+
+                                    <button class="btn btn-bookBtn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Book Now</button>
+
                                 <div class="clear"></div>
                             </div>
                         </div>
@@ -54,12 +51,6 @@
                         <div class="productDetails">
                             <ul>
                                 <li>
-                                    <strong>Property Id </strong>BN7040
-                                </li>
-                                <li>
-                                    <strong>Area Covered </strong> 0-9-5-0 Aana
-                                </li>
-                                <li>
                                     <strong>Road Access</strong>{{$property->road_width}} {{$property->road_unit}} / {{$property->road_type}}
                                 </li>
                                 <li>
@@ -71,9 +62,7 @@
                                 <li>
                                     <strong>Build Year </strong>{{$property->build_year}}
                                 </li>
-                                <li>
-                                    <strong>Views </strong>1205
-                                </li>
+
                             </ul>
                         </div>
                         <div class="aminitiList">
@@ -161,6 +150,7 @@
             </div>
         </div>
     </div>
+
     <div class="gharLocation">
         <iframe src="https://maps.google.com/maps?q={{$property->latitude}}, {{$property->longitude}}&z=17&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
     </div>
@@ -188,4 +178,78 @@
             </div>
         </div>
     </div>
+
+    <form action="{{route('bookings.store')}}" method="post">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Book Property</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Full Name</label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Sagar Khadka" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="sagar@gmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="+977-9876543210" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text" placeholder="Text Area"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{authUser()->id}}">
+                    <input type="hidden" name="property_id" value="{{$property->id}}">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </form>
 @endsection
+<script type="text/javascript ">
+    $('.gharbhadaSlide').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: false,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        smartSpeed: 2500,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+
+    })
+</script>
+

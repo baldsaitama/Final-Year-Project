@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<form method="POST" action="{{ route('properties.store') }}">
+<form method="POST" action="{{ route('register') }}">
     @csrf
 <div class="wrapper">
     <div class="container-fluid">

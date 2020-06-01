@@ -37,7 +37,7 @@
                                     <label>Property Status</label>
                                 </div>
                                 <div class="col-8">
-                                    <select class="form-control" name="status">
+                                    <select class="form-control" name="status" required>
                                         <option class="rent" value="rent" {{$property->status=='rent'?'selected':''}}>
                                             Rent
                                         </option>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="house" {{$property->category=='house'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="category" id="inlineRadio1" value="house" {{$property->category=='house'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">House</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental" {{$property->type=='residental'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental" {{$property->type=='residental'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio6">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -123,7 +123,7 @@
                                     <label>Property Face Option</label>
                                 </div>
                                 <div class="col-8">
-                                    <select class="form-control" name="property_face">
+                                    <select required class="form-control" name="property_face">
                                         <option class="east" value="east" {{$property->property_face=='east'?'selected':''}}>
                                             East
                                         </option>
@@ -146,11 +146,11 @@
                                     <label style="float: none; text-align: center;">Road :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="text" class="form-control" placeholder="Length" name="road_width" value="{{$property->road_width}}">
+                                    <input required type="text" class="form-control" placeholder="Length" name="road_width" value="{{$property->road_width}}">
                                 </div>
                                 <div class="col-4">
                                     <label for="unit">Unit</label>
-                                    <select class="form-control" name="road_unit">
+                                    <select required class="form-control" name="road_unit">
                                         <option class="feet" value="feet" {{$property->road_unit=='feet'?'selected':''}}>
                                             Feet
                                         </option>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-4">
                                     <label for="road_type">Road Type</label>
-                                    <select class="form-control" name="road_type">
+                                    <select required class="form-control" name="road_type">
                                         <option class="roadType" value="blacktopped" {{$property->road_type=='blacktopped'?'selected':''}}>
                                             Black Topped
                                         </option>
@@ -181,7 +181,7 @@
                                     <label style="float: none; text-align: center;">Built Year :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="text" class="form-control" placeholder="e.g. 2077" name="built_year" value="{{$property->built_year}}">
+                                    <input required type="text" class="form-control" placeholder="e.g. 2077" name="built_year" value="{{$property->built_year}}">
                                 </div>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
                                     <label>Furnishing</label>
                                 </div>
                                 <div class="col-8">
-                                    <select class="form-control" name="furnish">
+                                    <select required class="form-control" name="furnish">
                                         <option class="furnish" value="unfurnished" {{$property->furnish=='unfurnished'?'selected':''}}>
                                             Unfurnished
                                         </option>
@@ -214,7 +214,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1"  {{$property->kitchen=='1'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1"  {{$property->kitchen=='1'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1" {{$property->bedroom=='1'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1" {{$property->bedroom=='1'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -276,7 +276,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1" {{$property->living_room=='1'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1" {{$property->living_room=='1'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -307,7 +307,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1" {{$property->bathroom=='1'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1" {{$property->bathroom=='1'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -339,7 +339,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="is_published" value="1" {{$property->is_published=='1'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="is_published" value="1" {{$property->is_published=='1'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -356,7 +356,7 @@
                                     <label>Property Title</label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" placeholder="e.g. Sunshin Apartment for Sale" name="title" value="{{$property->title}}">
+                                    <input required type="text" class="form-control" placeholder="e.g. Sunshin Apartment for Sale" name="title" value="{{$property->title}}">
                                 </div>
                             </div>
                         </div>
@@ -378,11 +378,11 @@
                                     <label style="float: none; text-align: center;">Price :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="text" class="form-control" placeholder="Enter Price" name="price" value="{{$property->price}}">
+                                    <input required type="text" class="form-control" placeholder="Enter Price" name="price" value="{{$property->price}}">
                                 </div>
                                 <div class="col-4">
                                     <label for="price_unit">Price Unit</label>
-                                    <select class="form-control" name="price_unit">
+                                    <select required class="form-control" name="price_unit">
                                         <option class="priceunit" value="permonth" {{$property->price_unit=='permonth'?'selected':''}}>
                                             Per Month
                                         </option>
@@ -413,11 +413,11 @@
                         <div id="map" class="mb-3">
 
                         </div>
-                        <input type="text" name="display_address" id="display-address" class="form-control" disabled>
-                        <input type = "hidden" name="address_line_1">
-                        <input type = "hidden" name="longitude" id="longitude" value="{{$property->longitude}}">
-                        <input type = "hidden" name="latitude" id="latitude" value="{{$property->latitude}}">
-                        <input type = "hidden" name="user_id" value="{{authUser()->id}}">
+                        <input required type="text" name="display_address" id="display-address" class="form-control" disabled>
+                        <input required type = "hidden" name="address_line_1">
+                        <input required type = "hidden" name="longitude" id="longitude" value="{{$property->longitude}}">
+                        <input required type = "hidden" name="latitude" id="latitude" value="{{$property->latitude}}">
+                        <input required type = "hidden" name="user_id" value="{{authUser()->id}}">
 
                         <div class="col-lg-12">
                             <div class="bhadaBnt">
@@ -570,7 +570,7 @@
                 placeholder: placeholder,
                 allowClear: true,
                 delay: 250,
-                ajax: { 
+                ajax: {
                     url: $this.data('source'),
                     dataType: 'json',
                     quietMillis: 250,
@@ -581,7 +581,7 @@
                             id: $this.data('id')
                         };
                     },
-                    
+
                         processResults: function (data, params) {
                             params.page = params.page || 1;
 
@@ -638,7 +638,7 @@
             autoProcessQueue: false,
             url: productUpdate,
             paramName: "files",
-            maxFilesize: 8, 
+            maxFilesize: 8,
             addRemoveLinks: true,
             uploadMultiple: true,
             acceptedFiles: 'image/*',
@@ -699,7 +699,7 @@
                         formData.append(el.name, el.value);
                     });
                 });
-                
+
                 this.on('success', function(file, response){
                     toastMessage(response);
                 });
