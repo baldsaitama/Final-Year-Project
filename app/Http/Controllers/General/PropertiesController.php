@@ -125,6 +125,12 @@ class PropertiesController extends Controller
     {
         $property = $this->propertyRepo->requiredById($id);
         $property->delete();
+        $message = [
+            'status' => 'Property deleted.'
+        ];
+        if(request()->ajax() || request()->wantsJson()){
+            return response()->json($message);
+        }
         return redirect()->route('properties.index')->withStatus('Property Deleted');
     }
 

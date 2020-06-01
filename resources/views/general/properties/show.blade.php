@@ -21,9 +21,12 @@
                     @auth
                         <div class="col-lg-3">
                             <div class="bookButton">
-
-                                    <button class="btn btn-bookBtn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Book Now</button>
-
+                                <form action="{{route('bookings.store')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="user_id" value="{{authUser()->id}}">
+                                    <input type="hidden" name="property_id" value="{{$property->id}}">
+                                    <button class="btn btn-bookBtn" >Book Now</button>
+                                </form>
                                 <div class="clear"></div>
                             </div>
                         </div>
