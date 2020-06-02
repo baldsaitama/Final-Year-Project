@@ -31,6 +31,7 @@
                 <div class="row" id="create-property-box">
                     <form method="POST" action="{{ route('properties.update',$property->id)}}" id="editPropertyForm">
                         @csrf
+                        @method('PATCH')
                         <div class="col-lg-12 mb-4">
                             <div class="row">
                                 <div class="col-4">
