@@ -4,6 +4,8 @@
     Home
 @endsection
 
+{{--I am amit--}}
+
 @section('content')
     <div class="bhadaNewSlide">
         <div class="bhadaInner">
