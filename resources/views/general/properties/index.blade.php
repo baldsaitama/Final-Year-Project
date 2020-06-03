@@ -10,7 +10,7 @@
         <div class="postProperty">
             <h2>Property List</h2>
             <div class="row">
-                <table id="properties-table">
+                <table id="properties-table" class="table">
                     <tr>
                         <th>
                             S.n.
@@ -26,24 +26,32 @@
                         <tr>
                             <td>{{++$index}} </td>
                             <td>
-                                <a href="{{route('properties.show',$property->id)}}">{{$property->title}}</a>
+                                <div class="houesGrp">
+                                    <a href="{{route('properties.show',$property->id)}}">
+
+                                        <div class=" propertiesimg">
+                                            <img src="{{asset($property->images->first()?$property->images->first()->path:asset('images/banner.jpg'))}}">
+
+                                            <span class="priceTag">Rs. {{$property->price}}</span>
+
+                                        </div>
+                                        <h6>{{$property->title}}</h6>
+
+                                        <p><i class="fa fa-map-marker-alt mr-2"></i>{{$property->address_line_1}}</p>
+                                    </a>
+                                </div>
+{{--                                <a href="{{route('properties.show',$property->id)}}">{{$property->title}}</a>--}}
                             </td>
                             <td>
-                                <a href="{{route('properties.edit',$property->id)}}">Edit</a>
+                                <a class="btn btn-gharBhadaBtn" href="{{route('properties.edit',$property->id)}}">Edit</a>
                                 {!! getDeleteForm(route('properties.destroy', $property->id), "Delete property ({$property->title})?", "Are you sure you want to delete this property", 'btn btn-flat ink-reaction text-danger', 'fa fa-archive') !!}
                                 {{-- <a href="{{route('properties.destroy',$property->id)}}">Delete</a> --}}
                             </td>
                         </tr>
-                        
+
                     @endforeach
                 </table>
-                {{-- <div>
-                    @foreach ($properties as $property)
-                        <a href="{{route('properties.show',$property->id)}}">{{$property->type}}</a>
-                        <a href="{{route('properties.edit',$property->id)}}">Edit</a>
-                        <a href="{{route('properties.destroy',$property->id)}}">Delete</a>
-                    @endforeach
-                </div> --}}
+
             </div>
         </div>
     </div>
@@ -79,7 +87,7 @@
         		});
           }));
         });
-        
+
         function confirmWithCallback(title, text, cb) {
             if(!isOnline()){
             return false;

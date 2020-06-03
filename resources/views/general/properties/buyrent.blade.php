@@ -15,7 +15,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 mb-3">
                                         <label>Property Area</label>
-                                        <input type="text" class="form-control" name="area" placeholder="Eg. New Baneshowr">
+                                        <input type="text" class="form-control" name="area" placeholder="Eg. New Baneshowr" value="{{$area}}">
                                     </div>
                                     <div class="col-lg-12 mb-3">
                                         <label>Category</label>
@@ -62,13 +62,13 @@
                                             <label class="custom-control-label" for="customRadio4">SouthWest</label>
                                             <input type="hidden" name="s" value="{{$search}}">
                                         </div>
-    
-    
+
+
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <button class="btn btn-gharBhadaBtn w-100" type="submit">Filter Now</button>
                                     </div>
-    
+
                                 </div>
                             </form>
                         </div>
@@ -95,7 +95,7 @@
                                                 <span class="priceTag">Rs. {{$property->price}}</span>
                                             </div>
                                             <h6>{{$property->title}}</h6>
-                                            <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
+                                            <p><i class="fa fa-map-marker-alt mr-2"></i>{{$property->address_line_1}}</p>
                                             <!-- <h5>Rs. 2,70,00,000</h5> -->
                                         </a>
                                     </div>
@@ -112,7 +112,7 @@
         </div>
 
 
-        </body>
+        </div>
 
         </html>
 @endsection

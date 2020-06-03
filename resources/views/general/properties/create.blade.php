@@ -37,10 +37,10 @@
                                         <option class="rent" value="rent" selected="selected" disabled>
                                             Select Property Status
                                         </option>
-                                        <option class="rent" value="rent">
+                                        <option class="rent" value="Rent">
                                             Rent
                                         </option>
-                                        <option class="sale" value="sale">
+                                        <option class="sale" value="Sale">
                                             Sale
                                         </option>
                                     </select>
@@ -54,23 +54,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required"  class="form-check-input" type="radio" name="category" id="inlineRadio1" value="house">
+                                        <input required="required"  class="form-check-input" type="radio" name="category" id="inlineRadio1" value="House">
                                         <label class="form-check-label" for="inlineRadio1">House</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="flat">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="Flat">
                                         <label class="form-check-label" for="inlineRadio2">Flat</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="room">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="Room">
                                         <label class="form-check-label" for="inlineRadio3">Room</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio4" value="apartment">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio4" value="Apartment">
                                         <label class="form-check-label" for="inlineRadio4">Apartment</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio5" value="office space">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio5" value="Office Space">
                                         <label class="form-check-label" for="inlineRadio5">Office Space</label>
                                     </div>
 
@@ -118,17 +118,17 @@
                                 </div>
                                 <div class="col-8">
                                     <select required="required"  class="form-control" name="property_face">
-                                        <option class="east" value="east">
+                                        <option class="east" value="East">
                                             East
                                         </option>
-                                        <option class="west" value="west">
+                                        <option class="west" value="West">
                                             West
                                         </option>
-                                        <option class="southEast" value="southEast">
-                                            South East
+                                        <option class="southEast" value="North">
+                                            South
                                         </option>
-                                        <option class="southWest" value="southWest">
-                                            South West
+                                        <option class="southWest" value="South">
+                                            South
                                         </option>
                                     </select>
                                 </div>
@@ -145,10 +145,10 @@
                                 <div class="col-4">
                                     <label for="unit">Unit</label>
                                     <select required="required" class="form-control" name="road_unit">
-                                        <option class="feet" value="feet">
+                                        <option class="unit" value="feet">
                                             Feet
                                         </option>
-                                        <option class="meter" value="meter">
+                                        <option class="unit" value="meter">
                                             Meter
                                         </option>
                                     </select>
@@ -156,13 +156,13 @@
                                 <div class="col-4">
                                     <label for="road_type">Road Type</label>
                                     <select required="required" class="form-control" name="road_type">
-                                        <option class="roadType" value="blacktopped">
+                                        <option class="roadType" value="Black-topped">
                                             Black Topped
                                         </option>
-                                        <option class="roadType" value="gravelled">
+                                        <option class="roadType" value="Gravelled">
                                             Gravelled
                                         </option>
-                                        <option class="roadType" value="muddy">
+                                        <option class="roadType" value="Muddy">
                                             Muddy
                                         </option>
                                     </select>
@@ -186,13 +186,13 @@
                                 </div>
                                 <div class="col-8">
                                     <select required="required"  class="form-control" name="furnish">
-                                        <option class="furnish" value="unfurnished">
+                                        <option class="furnish" value="Unfurnished">
                                             Unfurnished
                                         </option>
-                                        <option class="furnish" value="semifurnished">
+                                        <option class="furnish" value="Semi-furnished">
                                             Semi-Furnished
                                         </option>
-                                        <option class="furnish" value="wellfurnished">
+                                        <option class="furnish" value="Well Furnished">
                                             Well-Furnished
                                         </option>
                                     </select>
@@ -377,13 +377,13 @@
                                 <div class="col-4">
                                     <label for="price_unit">Price Unit</label>
                                     <select required="required" class="form-control" name="price_unit">
-                                        <option class="priceunit" value="permonth">
+                                        <option class="priceunit" value="per month">
                                             Per Month
                                         </option>
                                         <option class="priceunit" value="onwards">
                                             Onwards
                                         </option>
-                                        <option class="priceunit" value="perroom">
+                                        <option class="priceunit" value="per room">
                                             Per Room
                                         </option>
                                     </select>

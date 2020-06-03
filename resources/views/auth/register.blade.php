@@ -45,12 +45,12 @@
                 <div class="col-lg-12 mb-4">
                     <div class="row">
                         <div class="col-4">
-                            <label for="name">Phone Number</label>
+                            <label for="phone">Phone Number</label>
                         </div>
                         <div class="col-8">
-                            <input id="phone_number" type="text" class="form-control @error('name') is-invalid @enderror" name="phone_number" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter Phone Nnmber">
+                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus placeholder="Enter Phone Number">
 
-                            @error('name')
+                            @error('phone')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

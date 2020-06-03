@@ -12,10 +12,10 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <h3>{{$property->title}}</h3>
-                        <p class="detailLocation"><i class="fa fa-map-marker-alt mr-2"></i>Lubhu, Lalitpur, Nepal</p>
+                        <p class="detailLocation"><i class="fa fa-map-marker-alt mr-2"></i>{{$property->address_line_1}}</p>
                         <div class="offeredPrice">
 
-                            <h4>Rs. {{$property->price}}</h4>
+                            <h4>Rs. {{$property->price}} / {{$property->price_unit}}</h4>
                         </div>
                     </div>
                     @auth
@@ -54,16 +54,25 @@
                         <div class="productDetails">
                             <ul>
                                 <li>
-                                    <strong>Road Access</strong>{{$property->road_width}} {{$property->road_unit}} / {{$property->road_type}}
+                                    <strong>Property Status :</strong>{{$property->status}}
                                 </li>
                                 <li>
-                                    <strong>Build Up Area</strong> 0-7-5-0 Aana
+                                    <strong>Category :</strong>{{$property->category}}
                                 </li>
                                 <li>
-                                    <strong>Property Face</strong>{{$property->property_face}}
+                                    <strong>Purpose :</strong>{{$property->type}}
                                 </li>
                                 <li>
-                                    <strong>Build Year </strong>{{$property->build_year}}
+                                    <strong>Road Width :</strong>{{$property->road_width}} {{$property->road_unit}}
+                                </li>
+                                <li>
+                                    <strong>Road Type :</strong>{{$property->road_type}}
+                                </li>
+                                <li>
+                                    <strong>Property Face :</strong>{{$property->property_face}}
+                                </li>
+                                <li>
+                                    <strong>Build Year : </strong>{{$property->built_year}}
                                 </li>
 
                             </ul>
@@ -142,8 +151,9 @@
                                 </li>
                             </ul>
                             <label>Owner's Details</label>
-                            <p>{{$property->user->name}}</p>
-                            <span>{{$property->user->phone}}</span>
+                            <p>Name : {{$property->user->name}}</p>
+                            <p>Phone: {{$property->user->phone}}</p>
+                            <p>Phone: {{$property->user->email}}</p>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -182,53 +192,7 @@
         </div>
     </div>
 
-    <form action="{{route('bookings.store')}}" method="post">
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Book Property</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Full Name</label>
-                            <input type="text" class="form-control" id="recipient-name" placeholder="Sagar Khadka" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="recipient-name" placeholder="sagar@gmail.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Phone Number</label>
-                            <input type="text" class="form-control" id="recipient-name" placeholder="+977-9876543210" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text" placeholder="Text Area"></textarea>
-                        </div>
-                    </form>
-                </div>
-
-                    @csrf
-                    <input type="hidden" name="user_id" value="{{authUser()->id}}">
-                    <input type="hidden" name="property_id" value="{{$property->id}}">
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Send message</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    </form>
 @endsection
 <script type="text/javascript ">
     $('.gharbhadaSlide').owlCarousel({

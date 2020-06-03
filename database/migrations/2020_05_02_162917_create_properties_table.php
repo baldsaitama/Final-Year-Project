@@ -22,10 +22,10 @@ class CreatePropertiesTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('property_face');
-            $table->string('road_width');
+            $table->integer('road_width');
             $table->string('road_unit');
             $table->string('road_type');
-            $table->string('built_year');
+            $table->integer('built_year')->nullable();
             $table->string('furnish');
             $table->string('kitchen');
             $table->string('bedroom');
@@ -33,9 +33,10 @@ class CreatePropertiesTable extends Migration
             $table->string('living_room');
             $table->string('is_published');
             $table->string('price');
-            $table->string('price_unit');
+            $table->integer('price_unit');
             $table->string('title');
-            $table->string('description');
+            $table->string('address_line_1')->nullable();
+            $table->string('description')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

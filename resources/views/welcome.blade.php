@@ -14,7 +14,7 @@
                 <p class="wow fadeInLeft mt-2" data-wow-duration="1s" data-wow-delay="0.5s">Search your dream home on Nepal’s largest property marketplace
                 </p>
                 <form class="wow fadeInLeft " data-wow-duration="1s" data-wow-delay="0.9s" action="{{route('properties.search')}}" method="GET">
-                    <input class="form-control " name="s" placeholder="Enter an address, town or property ID">
+                    <input class="form-control " name="area" placeholder="Enter an address, town or property ID">
                     <span>
                         <button><i class="fa fa-search"></i></button>
                     </span>
@@ -66,19 +66,26 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Houses Nearby</h2>
+                    <h2>Buying Houses Nearby</h2>
                 </div>
+
                 @foreach ($buyingHouses as $buyingHouse)
+
+
+
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="houesGrp">
                             <a href="{{route('properties.show',$buyingHouse->id)}}">
+
                                 <div class="houseImg">
                                     <img src="{{asset($buyingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
+
                                     <span class="priceTag">Rs. {{$buyingHouse->price}}</span>
+
                                 </div>
                                 <h6>{{$buyingHouse->title}}</h6>
-                                <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
-                                <!-- <h5>Rs. 2,70,00,000</h5> -->
+
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>{{$buyingHouse->address_line_1}}</p>
                             </a>
                         </div>
                     </div>
@@ -97,11 +104,11 @@
                         <div class="houesGrp">
                             <a href="{{route('properties.show',$rentingHouse->id)}}">
                                 <div class="houseImg">
-                                    <img src="{{asset($rentingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
+                                    <img src="{{asset($rentingHouse->images->first()?$rentingHouse->images->first()->path:asset('images/banner.jpg'))}}">
                                     <span class="priceTag">Rs. {{$rentingHouse->price}}</span>
                                 </div>
                                 <h6>{{$rentingHouse->title}}</h6>
-                                <p><i class="fa fa-map-marker-alt mr-2"></i>Bhaisepati, Lalitpur, Nepal</p>
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>{{$rentingHouse->address_line_1}}</p>
                                 <!-- <h5>Rs. 2,70,00,000</h5> -->
                             </a>
                         </div>
