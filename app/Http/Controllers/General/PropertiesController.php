@@ -83,7 +83,7 @@ class PropertiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showProperty($id)
     {
         $property = $this->propertyRepo->requiredById($id);
         $relatedProperties = $this->propertyRepo->properties()->where('latitude','>',$property->latitude)->take(4)->get();

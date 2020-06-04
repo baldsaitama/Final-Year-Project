@@ -26,7 +26,7 @@
                         <tr>
                             <td>{{++$index}} </td>
                             <td>
-                                <a href="{{route('properties.show',$property->id)}}">{{$property->title}}</a>
+                                <a href="{{route('properties.showProperty',$property->id)}}">{{$property->title}}</a>
                             </td>
                             <td>
                                 <a href="{{route('properties.edit',$property->id)}}">Edit</a>

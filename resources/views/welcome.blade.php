@@ -71,7 +71,7 @@
                 @foreach ($buyingHouses as $buyingHouse)
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="houesGrp">
-                            <a href="{{route('properties.show',$buyingHouse->id)}}">
+                            <a href="{{route('properties.showProperty',$buyingHouse->id)}}">
                                 <div class="houseImg">
                                     <img src="{{asset($buyingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
                                     <span class="priceTag">Rs. {{$buyingHouse->price}}</span>
@@ -95,7 +95,7 @@
                 @foreach ($rentingHouses as $rentingHouse)
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="houesGrp">
-                            <a href="{{route('properties.show',$rentingHouse->id)}}">
+                            <a href="{{route('properties.showProperty',$rentingHouse->id)}}">
                                 <div class="houseImg">
                                     <img src="{{asset($rentingHouse->images->first()?$buyingHouse->images->first()->path:asset('images/banner.jpg'))}}">
                                     <span class="priceTag">Rs. {{$rentingHouse->price}}</span>

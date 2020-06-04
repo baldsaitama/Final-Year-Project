@@ -89,7 +89,7 @@
                             @foreach ($properties as $property)
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                                     <div class="houesGrp">
-                                        <a href="{{route('properties.show',$property->id)}}">
+                                        <a href="{{route('properties.showProperty',$property->id)}}">
                                             <div class="houseImg">
                                                 <img src="{{asset($property->images->first()?$property->images->first()->path:asset('images/banner.jpg'))}}">
                                                 <span class="priceTag">Rs. {{$property->price}}</span>

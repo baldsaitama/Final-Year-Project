@@ -12,6 +12,14 @@
 */
 Route::group(['namespace' => 'General'], function(){
 	Route::get('/', 'WelcomeController@index')->name('welcome');
+	Route::get('/properties/buy-rent', [
+		'as' => 'properties.search',
+		'uses' => 'PropertiesController@search'
+	]);
+	Route::get('/properties/{property}/show', [
+		'as' => 'properties.showProperty',
+		'uses' => 'PropertiesController@showProperty'
+	]);
 
 });
 
@@ -21,10 +29,10 @@ Route::group(['middleware' => 'verified'], function(){
 	Route::group(['namespace' => 'General'], function(){
 		Route::resource('users','UsersController');
 		//PropertiesCOntroller
-		Route::get('/properties/buy-rent', [
-			'as' => 'properties.search',
-			'uses' => 'PropertiesController@search'
-		]);
+		// Route::get('/properties/buy-rent', [
+		// 	'as' => 'properties.search',
+		// 	'uses' => 'PropertiesController@search'
+		// ]);
 		Route::get('properties/{property}/images/get-images-lists', [
 			'as' => 'properties.getImagesLists',
 			'uses' => 'PropertiesController@getImagesLists'

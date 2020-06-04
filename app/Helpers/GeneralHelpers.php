@@ -78,3 +78,32 @@ if (! function_exists('unlinkFiles')) {
 		}
 	}
 }
+
+if (! function_exists('getAmenityClass')) {
+	function getAmenityClass($amenity)
+	{
+		switch ($amenity) {
+			case stristr($amenity,'wifi'): 
+				return 'fa-wifi';
+				break;
+			case stristr($amenity,'tv'):
+				return 'fa-tv';
+				break;
+			case stristr($amenity,'bath'):
+				return 'fa-bath';
+				break;
+			case stristr($amenity,'toilet paper'):
+				return 'fa-toilet-paper';
+				break;
+			case stristr($amenity,'breakfast'):
+				return 'fa-mug-hot';
+				break;
+			case stristr($amenity,'parking'):
+				return 'fa-parking';
+				break;
+			case stristr($amenity,'hot water'):
+				return 'fa-bath';
+				break;
+		}
+	}
+}
