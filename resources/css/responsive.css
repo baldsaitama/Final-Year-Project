@@ -1,0 +1,17 @@
+@media(min-width:1500px) and (max-width:1550px) {
+    .gharbhadaSlide .slideImg {
+        width: 1230px;
+        height: 580px;
+        margin: 0 auto;
+    }
+    .houseImg {
+        width: auto;
+        height: 200px;
+    }
+    .wrapper {
+        margin-top: 6.5pc;
+    }
+    .logBox {
+        margin: 10pc auto 6pc auto;
+    }
+}

@@ -32,6 +32,7 @@ class Property extends Model
         'is_published',
         'price',
         'price_unit',
+        'address_line_1',
     ];
 
 

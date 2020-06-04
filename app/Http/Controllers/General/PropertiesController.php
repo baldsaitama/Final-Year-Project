@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\General;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\PropertyRepository;
@@ -22,7 +23,8 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        $properties = $this->propertyRepo->paginate(null,20);
+//        $properties = $this->propertyRepo->paginate(null,20);
+        $properties = authUser()->properties;
         return view('general.properties.index',compact('properties'));
     }
 
@@ -136,12 +138,13 @@ class PropertiesController extends Controller
 
     public function search(Request $request)
     {
-        $search = $request->s? :'';
+        $search = $request->s? :null;
         $status = $request->status? :'rent';
         $category = $request->category? :null;
         $type = $request->type? :null;
         $property_face = $request->property_face? :null;
         $price = $request->price? :null;
+        $area = $request->area? :null;
         $properties = $this->propertyRepo->properties();
         if ($request->has('status')) {
             $properties = $properties->where('status',$status);
@@ -165,8 +168,14 @@ class PropertiesController extends Controller
         if ($request->has('price')) {
             $properties = $properties->where('price','<=',$price);
         }
+        if ($request->has('area')) {
+            $properties = $properties->where(function($query) use($area){
+                return $query
+                    ->where('address_line_1', 'like', "%{$area}%");
+            });
+        }
         $properties = $properties->paginate(12);
-        return view('general.properties.buyrent',compact('properties','search','status','category','price','type','property_face'));
+        return view('general.properties.buyrent',compact('properties','search','status','category','price','type','property_face', 'area'));
     }
 
     public function getImagesLists(Request $request, $property_id)

@@ -19,7 +19,6 @@ p {
     padding: 0;
 }
 
-
 p {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -263,14 +262,7 @@ footer p {
     position: relative;
 }
 
-.propertiesimg {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px auto;
-    position: relative;
-}
-
-.houseImg img, .propertiesimg img {
+.houseImg img {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;

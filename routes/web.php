@@ -37,12 +37,12 @@ Route::group(['middleware' => 'verified'], function(){
 			'as' => 'properties.getImagesLists',
 			'uses' => 'PropertiesController@getImagesLists'
 		]);
-	
+
 		Route::post('properties/{property}/images', [
 			'as' => 'properties.uploadImage',
 			'uses' => 'PropertiesController@uploadImage'
 		]);
-	
+
 		Route::delete('properties/{property}/images/{image}', [
 			'as' => 'properties.deleteImage',
 			'uses' => 'PropertiesController@deleteImage'
@@ -56,7 +56,7 @@ Route::group(['middleware' => 'verified'], function(){
 			'as' => 'amenities.getLists',
 			'uses' => 'AmenitiesController@getLists'
 		]);
-	
+
 		Route::get('amenities/get-lists/{amenity}', [
 			'uses' => 'AmenitiesController@getList'
 		]);

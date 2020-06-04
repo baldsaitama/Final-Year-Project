@@ -41,9 +41,7 @@
                                     </div>
                                     <div class="uploader__box js-uploader__box l-center-box">
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                                        </div>
+
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile01"
                                                 aria-describedby="inputGroupFileAddon01" value="Select Files" name="image" accept="image/*">

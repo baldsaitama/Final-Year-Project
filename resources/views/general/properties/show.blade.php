@@ -12,10 +12,10 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <h3>{{$property->title}}</h3>
-                        <p class="detailLocation"><i class="fa fa-map-marker-alt mr-2"></i>Lubhu, Lalitpur, Nepal</p>
+                        <p class="detailLocation"><i class="fa fa-map-marker-alt mr-2"></i>{{$property->address_line_1}}</p>
                         <div class="offeredPrice">
 
-                            <h4>Rs. {{$property->price}}</h4>
+                            <h4>Rs. {{$property->price}} / {{$property->price_unit}}</h4>
                         </div>
                     </div>
                     @auth
@@ -54,16 +54,25 @@
                         <div class="productDetails">
                             <ul>
                                 <li>
-                                    <strong>Road Access</strong>{{$property->road_width}} {{$property->road_unit}} / {{$property->road_type}}
+                                    <strong>Property Status :</strong>{{$property->status}}
                                 </li>
                                 <li>
-                                    <strong>Build Up Area</strong> 0-7-5-0 Aana
+                                    <strong>Category :</strong>{{$property->category}}
                                 </li>
                                 <li>
-                                    <strong>Property Face</strong>{{$property->property_face}}
+                                    <strong>Purpose :</strong>{{$property->type}}
                                 </li>
                                 <li>
-                                    <strong>Build Year </strong>{{$property->build_year}}
+                                    <strong>Road Width :</strong>{{$property->road_width}} {{$property->road_unit}}
+                                </li>
+                                <li>
+                                    <strong>Road Type :</strong>{{$property->road_type}}
+                                </li>
+                                <li>
+                                    <strong>Property Face :</strong>{{$property->property_face}}
+                                </li>
+                                <li>
+                                    <strong>Build Year : </strong>{{$property->built_year}}
                                 </li>
 
                             </ul>
@@ -142,8 +151,9 @@
                                 </li>
                             </ul>
                             <label>Owner's Details</label>
-                            <p>{{$property->user->name}}</p>
-                            <span>{{$property->user->phone}}</span>
+                            <p>Name : {{$property->user->name}}</p>
+                            <p>Phone: {{$property->user->phone}}</p>
+                            <p>Phone: {{$property->user->email}}</p>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -182,6 +192,10 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfd289b9f3a3af11c97b1ff3ee4a890ca5d637a2
 @endsection
 <script type="text/javascript ">
     $('.gharbhadaSlide').owlCarousel({

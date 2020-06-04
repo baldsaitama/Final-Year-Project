@@ -43,7 +43,7 @@ class ProfilesController extends Controller
     public function store(Request $request)
     {
         $profile = $this->profileRepo->store($request);
-        return redirect()->route('welcome')->withStatus('Profile Created');
+        return redirect()->route('welcome')->withStatus('Profile sent for verification');
     }
 
     /**
