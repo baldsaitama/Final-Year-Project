@@ -53,7 +53,7 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        // $validatedData = $request->validate([
 //            'status' => ['required'],
 //            'category' => ['required'],
 //            'type' => ['required'],
@@ -72,7 +72,7 @@ class PropertiesController extends Controller
 //            'description' => ['required'],
 //            'price' => ['required'],
 //            'price_unit' => ['required'],
-        ]);
+        // ]);
 
 
         $property = $this->propertyRepo->store($request);

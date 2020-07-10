@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    Register
+@endsection
+
 @section('content')
 <form method="POST" action="{{ route('register') }}">
     @csrf

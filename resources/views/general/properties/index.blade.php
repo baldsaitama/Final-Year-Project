@@ -26,11 +26,8 @@
                         <tr>
                             <td>{{++$index}} </td>
                             <td>
-<<<<<<< HEAD
-                                <a href="{{route('properties.showProperty',$property->id)}}">{{$property->title}}</a>
-=======
                                 <div class="houesGrp">
-                                    <a href="{{route('properties.show',$property->id)}}">
+                                    <a href="{{route('properties.showProperty',$property->id)}}">
 
                                         <div class=" propertiesimg">
                                             <img src="{{asset($property->images->first()?$property->images->first()->path:asset('images/banner.jpg'))}}">
@@ -44,7 +41,6 @@
                                     </a>
                                 </div>
 {{--                                <a href="{{route('properties.show',$property->id)}}">{{$property->title}}</a>--}}
->>>>>>> bfd289b9f3a3af11c97b1ff3ee4a890ca5d637a2
                             </td>
                             <td>
                                 <a class="btn btn-gharBhadaBtn" href="{{route('properties.edit',$property->id)}}">Edit</a>

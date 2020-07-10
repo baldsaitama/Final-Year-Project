@@ -33,7 +33,7 @@ class CreatePropertiesTable extends Migration
             $table->string('living_room');
             $table->string('is_published');
             $table->string('price');
-            $table->integer('price_unit');
+            $table->string('price_unit');
             $table->string('title');
             $table->string('address_line_1')->nullable();
             $table->string('description')->nullable();
