@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{$status=='rent'?'Rentig Property':'Buying Property'}}
+    {{$status=='rent'?'Renting Property':'Buying Property'}}
 @endsection
 
 @section('content')

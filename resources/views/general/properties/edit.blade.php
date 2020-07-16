@@ -415,7 +415,7 @@
 
                         </div>
                         <input required type="text" name="display_address" id="display-address" class="form-control" disabled>
-                        <input required type = "hidden" name="address_line_1">
+                        <input required type = "hidden" name="address_line_1" value="{{$property->address_line_1}}">
                         <input required type = "hidden" name="longitude" id="longitude" value="{{$property->longitude}}">
                         <input required type = "hidden" name="latitude" id="latitude" value="{{$property->latitude}}">
                         <input required type = "hidden" name="user_id" value="{{authUser()->id}}">
@@ -457,7 +457,7 @@
                 console.log('no');
             }
         }
-        // initializeGoogleMap('map', modal, current_lat, current_lng);
+
         var infoWindow,map;
         function initializeGoogleMap() {
             if ($lat_val) {
@@ -555,7 +555,7 @@
             }
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_-5XwAG2EqiuzpFLEUK0ZX-P5Bgm9Yk&callback=initializeGoogleMap&libraries=places"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpdStvcLFu2Ymkx8iHXaUStiXscT2WlO4&callback=initializeGoogleMap&libraries=places"
             async defer>
     </script>
     <script>

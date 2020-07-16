@@ -12,9 +12,9 @@
             <div class="row">
                 <table id="properties-table" class="table">
                     <tr>
-                        <th>
-                            S.n.
-                        </th>
+                            <th>
+                                S.n.
+                            </th>
                         <th>
                             Title
                         </th>

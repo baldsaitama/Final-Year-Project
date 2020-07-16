@@ -19,7 +19,6 @@ p {
     padding: 0;
 }
 
-
 p {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -263,14 +262,7 @@ footer p {
     position: relative;
 }
 
-.propertiesimg {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px auto;
-    position: relative;
-}
-
-.houseImg img, .propertiesimg img {
+.houseImg img {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
@@ -751,4 +743,68 @@ label {
 
 .seeAllGrp a:hover {
     color: #6d6d6d;
+}
+
+.pprtImg {
+    width: 200px;
+    height: 200px;
+}
+
+.pprtImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.bhdaTable {
+    height: 100vh;
+}
+
+.menuUserImg {
+    width: 40px;
+    height: 40px;
+}
+
+.menuUserImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.navbar .dropdown-menu * {
+    transition: all 0.4s ease 0s;
+    color: #425B71;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dashboardMenus a:hover {
+    font-weight: bold;
+    color: #03C2E4;
+    margin-left: 8px;
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    border: 0px solid;
+}
+
+.searchBox .form-control {
+    position: relative;
+}
+
+.searchBox button {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 13px;
+    color: #0b9c98;
+    background-color: transparent;
+    border: 0px solid;
 }

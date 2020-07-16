@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\PropertyRepository;
-use Illuminate\Support\Facades\Validator;
+
 
 class PropertiesController extends Controller
 {
@@ -19,11 +19,12 @@ class PropertiesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Validation\Validator
      */
+
     public function index()
     {
-//        $properties = $this->propertyRepo->paginate(null,20);
+
         $properties = authUser()->properties;
         return view('general.properties.index',compact('properties'));
     }
@@ -53,26 +54,25 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-//            'status' => ['required'],
-//            'category' => ['required'],
-//            'type' => ['required'],
-//            'property_face' => ['required'],
-//            'road_width' => ['required', 'integer'],
-//            'road_type' => ['required'],
-//            'road_unit' => ['required'],
-//            'built_year' => ['required'],
-//            'furnish' => ['required'],
-//            'kitchen' => ['required'],
-//            'bedroom' => ['required'],
-//            'living_room' => ['required'],
-//            'bathroom' => ['required'],
-//            'is_published' => ['required'],
-//            'title' => ['required'],
-//            'description' => ['required'],
-//            'price' => ['required'],
-//            'price_unit' => ['required'],
-        // ]);
+         $validatedData = $request->validate([
+            'status' => ['required'],
+            'category' => ['required'],
+            'type' => ['required'],
+            'property_face' => ['required'],
+            'road_width' => ['required','integer'],
+            'road_type' => ['required'],
+            'road_unit' => ['required'],
+            'built_year' => ['required','integer'],
+            'furnish' => ['required'],
+            'kitchen' => ['required'],
+            'bedroom' => ['required'],
+            'living_room' => ['required'],
+            'bathroom' => ['required'],
+            'is_published' => ['required'],
+            'title' => ['required'],
+            'price' => ['required','integer'],
+            'price_unit' => ['required'],
+         ]);
 
 
         $property = $this->propertyRepo->store($request);

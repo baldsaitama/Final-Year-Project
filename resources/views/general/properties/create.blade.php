@@ -33,7 +33,7 @@
                                     <label>Property Status</label>
                                 </div>
                                 <div class="col-8">
-                                    <select required="required"  class="form-control @error('name') is-invalid @enderror" name="status">
+                                    <select required="required" class="form-control" name="status">
                                         <option class="rent" value="rent" selected="selected" disabled>
                                             Select Property Status
                                         </option>
@@ -53,8 +53,8 @@
                                     <label>Category</label>
                                 </div>
                                 <div class="col-8">
-                                    <div class="form-check form-check-inline">
-                                        <input required="required"  class="form-check-input" type="radio" name="category" id="inlineRadio1" value="House">
+                                    <div  class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="House">
                                         <label class="form-check-label" for="inlineRadio1">House</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental">
+                                        <input  class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental">
                                         <label class="form-check-label" for="inlineRadio6">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -117,7 +117,10 @@
                                     <label>Property Face Option</label>
                                 </div>
                                 <div class="col-8">
-                                    <select required="required"  class="form-control" name="property_face">
+                                    <select required="required" class="form-control" name="property_face">
+                                        <option selected="selected" disabled>
+                                            Select property face option
+                                        </option>
                                         <option class="east" value="East">
                                             East
                                         </option>
@@ -140,11 +143,15 @@
                                     <label style="float: none; text-align: center;">Road :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input required="required"  type="text" class="form-control" placeholder="Length" name="road_width">
+                                    <label for="unit">Width</label>
+                                    <input required="required" value="{{ old('road_width') }}"  type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="form-control" placeholder="Width" name="road_width">
                                 </div>
                                 <div class="col-4">
                                     <label for="unit">Unit</label>
                                     <select required="required" class="form-control" name="road_unit">
+                                        <option selected="selected" disabled>
+                                            Select length unit
+                                        </option>
                                         <option class="unit" value="feet">
                                             Feet
                                         </option>
@@ -156,6 +163,9 @@
                                 <div class="col-4">
                                     <label for="road_type">Road Type</label>
                                     <select required="required" class="form-control" name="road_type">
+                                        <option selected="selected" disabled>
+                                            Select road type
+                                        </option>
                                         <option class="roadType" value="Black-topped">
                                             Black Topped
                                         </option>
@@ -175,7 +185,7 @@
                                     <label style="float: none; text-align: center;">Built Year :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input required="required" type="text" class="form-control" placeholder="e.g. 2077" name="built_year">
+                                    <input required="required" type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="form-control" placeholder="e.g. 2077" name="built_year">
                                 </div>
                             </div>
                         </div>
@@ -185,7 +195,10 @@
                                     <label>Furnishing</label>
                                 </div>
                                 <div class="col-8">
-                                    <select required="required"  class="form-control" name="furnish">
+                                    <select required="required" class="form-control" name="furnish">
+                                        <option selected="selected" disabled>
+                                            Select Furnishing
+                                        </option>
                                         <option class="furnish" value="Unfurnished">
                                             Unfurnished
                                         </option>
@@ -208,7 +221,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -239,7 +252,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -270,7 +283,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -301,7 +314,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -333,7 +346,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required="required" class="form-check-input" type="radio" name="is_published" value="1">
+                                        <input class="form-check-input" type="radio" name="is_published" value="1">
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -372,11 +385,16 @@
                                     <label style="float: none; text-align: center;">Price :</label>
                                 </div>
                                 <div class="col-4">
-                                    <input required="required" type="text" class="form-control" placeholder="Enter Price" name="price">
+                                    <input required="required" type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="form-control" placeholder="Enter Price" name="price">
+                                </div>
+                                <div class="col-lg-12 mb-1">
+                                    <label style="float: none; text-align: center;">Price Unit</label>
                                 </div>
                                 <div class="col-4">
-                                    <label for="price_unit">Price Unit</label>
-                                    <select required="required" class="form-control" name="price_unit">
+                                    <select class="form-control" name="price_unit">
+                                        <option selected="selected" disabled>
+                                            Select pricing value
+                                        </option>
                                         <option class="priceunit" value="per month">
                                             Per Month
                                         </option>
@@ -548,7 +566,7 @@
                     }
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_-5XwAG2EqiuzpFLEUK0ZX-P5Bgm9Yk&callback=initializeGoogleMap&libraries=places"
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpdStvcLFu2Ymkx8iHXaUStiXscT2WlO4&callback=initializeGoogleMap&libraries=places"
                     async defer>
             </script>
             <script>
@@ -660,7 +678,7 @@
                                 $('#createPropertyForm').submit();
                             }else{
                                 removeCardLoader(productCreateBox);
-                                toastr.error('Please select at least one file');
+                                // toastr.error('Please select at least one file');
                             }
                         });
 
@@ -709,5 +727,11 @@
                 $("select[required]").on('focus, click, change', function(e){
                     $(this).siblings('span.select2').removeClass('invalid-select2')
                 });
+            </script>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myRadio").required;
+                    document.getElementById("demo").innerHTML = x;
+                }
             </script>
 @endsection

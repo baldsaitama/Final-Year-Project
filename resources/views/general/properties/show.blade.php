@@ -43,9 +43,8 @@
                         </div>
                     </div>
 
-                    <!-- <div class="col-lg-4">
 
-                    </div> -->
+
                     <div class="col-lg-8 detailGrp">
                         <div class="detialPageInfo">
                             <label>Description</label>
@@ -113,7 +112,7 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-2">
-                                            <i class="fa fa-bed"></i>
+                                            <i class="fas fa-utensils"></i>
                                         </div>
                                         <div class="col-10">
                                             <div class="offerInfo">
@@ -126,7 +125,7 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-2">
-                                            <i class="fa fa-bed"></i>
+                                            <i class="fa fa-bath"></i>
                                         </div>
                                         <div class="col-10">
                                             <div class="offerInfo">
@@ -139,7 +138,7 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-2">
-                                            <i class="fa fa-bed"></i>
+                                            <i class="fas fa-couch"></i>
                                         </div>
                                         <div class="col-10">
                                             <div class="offerInfo">
@@ -153,7 +152,7 @@
                             <label>Owner's Details</label>
                             <p>Name : {{$property->user->name}}</p>
                             <p>Phone: {{$property->user->phone}}</p>
-                            <p>Phone: {{$property->user->email}}</p>
+                            <p>Email: {{$property->user->email}}</p>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -192,10 +191,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bfd289b9f3a3af11c97b1ff3ee4a890ca5d637a2
 @endsection
 <script type="text/javascript ">
     $('.gharbhadaSlide').owlCarousel({
@@ -219,7 +214,7 @@
                 items: 1
             }
         }
-
     })
 </script>
+
 
