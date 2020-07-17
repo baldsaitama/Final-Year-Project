@@ -12,10 +12,14 @@
 */
 Route::group(['namespace' => 'General'], function(){
 	Route::get('/', 'WelcomeController@index')->name('welcome');
-	Route::get('/properties/buy-rent', [
+	Route::get('/properties/search', [
 		'as' => 'properties.search',
 		'uses' => 'PropertiesController@search'
 	]);
+    Route::get('/properties/buy-rent', [
+        'as' => 'properties.buy-rent',
+        'uses' => 'PropertiesController@buyrent'
+    ]);
 	Route::get('/properties/{property}/show', [
 		'as' => 'properties.showProperty',
 		'uses' => 'PropertiesController@showProperty'

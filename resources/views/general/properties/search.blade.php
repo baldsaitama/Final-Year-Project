@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{$status=='rent'?'Renting Property':'Buying Property'}}
+    {{"Results for Search Property"}}
 @endsection
 
 @section('content')
@@ -14,10 +14,6 @@
                             <form action="{{route('properties.search')}}" method="get">
                                 <div class="row">
                                     <div class="col-lg-12 mb-3">
-                                        <label>Property Area</label>
-                                        <input required="required" type="text" class="form-control" name="area" placeholder="Eg. New Baneshowr" value="{{$area}}">
-                                    </div>
-                                    <div class="col-lg-12 mb-3">
                                         <label>Category</label>
                                         <select required="required" class="custom-select" name="category">
                                             <option selected="selected" disabled>Choose Category</option>
@@ -30,7 +26,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-3">
                                         <label>Propert Type</label>
-                                        <select class="custom-select" name="type">
+                                        <select required="required" class="custom-select" name="type">
                                             <option value="residental" {{$type=='residental'?'selected':''}}>Residential</option>
                                             <option value="commercial" {{$type=='commercial'?'selected':''}}>Commercial</option>
                                         </select>
@@ -76,7 +72,7 @@
                     </div>
                     <div class="col-lg-10">
                         <div class="float-left">
-                            <h2>Properties For {{$status=='rent'?'Rent':'Buying'}}</h2>
+                            <h2>{{$properties->count()}} results(s) for {{request()->input('area')}}</h2>
                         </div>
                         {{-- <div class="float-right sortSl">
                             <select class="custom-select">
@@ -113,7 +109,7 @@
         </div>
 
 
-        </div>
+    </div>
 
-        </html>
+    </html>
 @endsection

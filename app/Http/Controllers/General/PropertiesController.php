@@ -175,8 +175,51 @@ class PropertiesController extends Controller
             });
         }
         $properties = $properties->paginate(12);
+        return view('general.properties.search',compact('properties','search','status','category','price','type','property_face', 'area'));
+    }
+
+    public function buyrent(Request $request)
+    {
+        $search = $request->s? :null;
+        $status = $request->status? :'rent';
+        $category = $request->category? :null;
+        $type = $request->type? :null;
+        $property_face = $request->property_face? :null;
+        $price = $request->price? :null;
+        $area = $request->area? :null;
+        $properties = $this->propertyRepo->properties();
+        if ($request->has('status')) {
+            $properties = $properties->where('status',$status);
+        }
+        if ($search) {
+            $properties = $properties
+                ->where(function($query) use($search){
+                    return $query
+                        ->where('title', 'like', "%{$search}%");
+                });
+        }
+        if ($request->has('category')) {
+            $properties = $properties->where('category',$category);
+        }
+        if ($request->has('type')) {
+            $properties = $properties->where('type',$type);
+        }
+        if ($request->has('property_face')) {
+            $properties = $properties->where('property_face',$property_face);
+        }
+        if ($request->has('price')) {
+            $properties = $properties->where('price','<=',$price);
+        }
+        if ($request->has('area')) {
+            $properties = $properties->where(function($query) use($area){
+                return $query
+                    ->where('address_line_1', 'like', "%{$area}%");
+            });
+        }
+        $properties = $properties->paginate(12);
         return view('general.properties.buyrent',compact('properties','search','status','category','price','type','property_face', 'area'));
     }
+
 
     public function getImagesLists(Request $request, $property_id)
     {

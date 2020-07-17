@@ -47,10 +47,10 @@
     </script>
     <script type="text/javascript" src="{{asset('js/jQuery.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/gharBhadaScrollTop.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/wow.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
 
     <script>
         new WOW().init();
