@@ -27,6 +27,15 @@ Auth::routes(['verify' => true]);
 Route::group(['middleware' => 'verified'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::group(['namespace' => 'General'], function(){
+		Route::get('/users/edit-password', [
+			'as' => 'users.editPassword',
+			'uses' => 'UsersController@editPassword'
+		]);
+
+		Route::put('/users/change-password/{id}', [
+			'as' => 'users.changePassword',
+			'uses' => 'UsersController@changePassword'
+		]);
 		Route::resource('users','UsersController');
 		//PropertiesCOntroller
 		// Route::get('/properties/buy-rent', [
@@ -51,6 +60,7 @@ Route::group(['middleware' => 'verified'], function(){
 		//
 		Route::resource('profiles','ProfilesController');
 		Route::resource('bookings','BookingsController');
+		Route::resource('notifications','NotificationsController');
 
 		Route::get('amenities/get-lists', [
 			'as' => 'amenities.getLists',

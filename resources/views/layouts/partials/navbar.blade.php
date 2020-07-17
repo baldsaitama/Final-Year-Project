@@ -22,11 +22,28 @@
                 </li>
 
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link logBtn" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
-                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                    <li class="nav-item dropdown  mr-0 pr-0">
+                        <div class="row">
+                            <div class="col-7">
+                                <a class="nav-link dropdown-toggle" href="#" id="userActionBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{authUser()->name}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="userActionBtn">
+                                    <a class="dropdown-item" href="{{route('users.show',authUser()->id)}}">Dashboard</a>
+                                    <a class="dropdown-item" href="{{route('bookings.index')}}">Bookings</a>
+                                    <a class="dropdown-item" href="{{route('notifications.index')}}">Notifications</a>
+                                    <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
+                                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="menuUserImg">
+                                    <img src="{{authUser()->present()->profilePicture}}" alt="user" class="d-flex img-responsive">
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 @else
                         <li class="nav-item">

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\booking;
 use App\Traits\PresentableTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,9 +45,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Property::class);
     }
 
-    public function booking()
+    public function bookings()
     {
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Booking::class, 'user_id');
     }
 
     public function profile()

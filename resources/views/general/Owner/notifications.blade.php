@@ -104,9 +104,9 @@
                 <div class="bhdaTable">
                     <div class="container">
                         <div class="row">
-                            <di class="col-lg-12 mb-3 text-center">
+                            <div class="col-lg-12 mb-3 text-center">
                                 <h2>Notifications</h2>
-                            </di>
+                            </div>
                             <div class="col-lg-12">
                                 <table class="table">
                                     <thead>
