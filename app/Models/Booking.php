@@ -1,14 +1,11 @@
 <?php
 
-namespace App\MOdels;
+namespace App\Models;
 
-use App\Models\Property;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class booking extends Model
+class Booking extends Model
 {
-    use SoftDeletes;
     protected $fillable = [
         'id',
         'user_id',

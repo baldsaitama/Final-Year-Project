@@ -4,16 +4,14 @@ namespace App\Http\Controllers\General;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Eloquent\BookingRepository;
+use App\Repositories\Eloquent\NotificationRepository;
 
-class BookingsController extends Controller
+class NotificationsController extends Controller
 {
+    protected $notificationRepo;
 
-    protected $bookingRepo;
-
-    function __construct(BookingRepository $bookingRepo)
-    {
-       $this->bookingRepo = $bookingRepo;
+    function __construct(NotificationRepository $notificationRepo){
+        $this->notificationRepo = $notificationRepo;
     }
     /**
      * Display a listing of the resource.
@@ -22,8 +20,8 @@ class BookingsController extends Controller
      */
     public function index()
     {
-        $bookings = authUser()->bookings()->orderBy('created_at','desc')->paginate(20);
-        return view('general.bookings.index',compact('bookings'));
+        $notifications = authUser()->notifications()->paginate(10);
+        return view('general.users.notifications.index', compact('notifications'));
     }
 
     /**
@@ -44,8 +42,7 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        $booking = $this->bookingRepo->store($request);
-        return redirect()->back()->withStatus('Booking Created');
+        //
     }
 
     /**
@@ -79,7 +76,9 @@ class BookingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $notification = $this->notificationRepo->renew($request, $id);
+        $notifications = authUser()->notifications()->paginate(10);
+        return view('general.users.notifications.index',compact('notifications'));
     }
 
     /**
@@ -91,5 +90,11 @@ class BookingsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function markAllRead()
+    {
+        $notifications = authUser()->notifications()->update(['read_at'=>now()]);
+        return redirect()->back()->withStatus('All marked as read');
     }
 }
