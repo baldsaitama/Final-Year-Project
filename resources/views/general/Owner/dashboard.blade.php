@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="dashboard/css/styles.css">
     <title>Dashboard </title>
 </head>
 
@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="notifications.blade.php"><span class="navNotify">  <i data-feather="bell"></i>
+                    <a class="nav-link" href="notifications.html"><span class="navNotify">  <i data-feather="bell"></i>
                      <span class="countNot">2</span>
                     </a>
                 </li>
@@ -43,6 +43,8 @@
                                 User's Name
                             </a>
                             <div class="dropdown-menu" aria-labelledby="userActionBtn">
+                                <a class="dropdown-item" href="#">Sub Menu</a>
+                                <a class="dropdown-item" href="#">Sub Menu</a>
                                 <a class="dropdown-item" href="#">Log Out</a>
                             </div>
                         </div>
@@ -197,11 +199,11 @@
 </div>
 <!-- footer -->
 <!--  JavaScript -->
-<script type="text/javascript " src="js/jquery-3.2.1.min.js "></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript " src="js/owl.carousel.min.js "></script>
-<script src="js/script.js"></script>
-<script src="js/feather.min.js"></script>
+<script type="text/javascript " src="dashboard/js/jquery-3.2.1.min.js "></script>
+<script src="dashboard/js/bootstrap.min.js"></script>
+<script type="text/javascript " src="dashboard/js/owl.carousel.min.js "></script>
+<script src="dashboard/js/script.js"></script>
+<script src="dashboard/js/feather.min.js"></script>
 <script>
     feather.replace()
 </script>

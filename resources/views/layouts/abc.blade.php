@@ -15,32 +15,18 @@
     </title>
 
     @section('stylesheets')
+
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/bootstrap.min.css')}}">
         <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/owl.theme.default.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/styles.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/owl.theme.default.min.css')}}">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
-        <style>
-            .select2-results__option[aria-selected=true] {
-                display: none;
-            }
-        </style>
     @show
 
 </head>
 <body>
 <div id="app">
-    @include('layouts.partials.navbar')
+    @include('layouts.partials.dashboardnav')
     @yield('content')
     @include('layouts.partials.footer')
 </div>
@@ -55,32 +41,9 @@
     <script type="text/javascript" src="{{asset('dashboard/js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('dashboard/js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('dashboard/js/feather.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jQuery.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/gharBhadaScrollTop.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/wow.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
-
     <script>
-        new WOW().init();
+        feather.replace()
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-    <script src="{{asset('js/smooth-scroll.js')}}"></script>
-    <script type="text/javascript">
-        var scroll = new SmoothScroll('a[href*="#buyHouse"]', {
-            speed: 1500,
-            offset: 100,
-
-        });
-        var scroll = new SmoothScroll('a[href*="#rentHouse"]', {
-            speed: 1500,
-            offset: 100,
-
-        });
-    </script>
-
 
     {{-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">

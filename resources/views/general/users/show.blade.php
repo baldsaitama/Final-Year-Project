@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.abc')
 
 @section('title')
     User
 @endsection
-
 @section('content')
 <div class="dashboardUi">
     <div class="container-fluid">
@@ -14,7 +13,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="userImg">
-                                    <img src="images/profile.jpg">
+                                    <img src="{{asset('dashboard/images/profile.jpg')}}">
                                 </div>
                             </div>
                             <div class="col-8">
@@ -28,7 +27,7 @@
                     <div class="dashboardMenus">
                         <ul>
                             <li>
-                                <a href="dashboard.html">Dashboard</a>
+                                <a href="{{route('users.show',authUser()->id)}}">Dashboard</a>
                             </li>
                             <li>
                                 <a href="edit profile.html">Edit Profile</a>
@@ -55,7 +54,7 @@
                                     <div class="col-lg-4">
                                         <div class="userImgGrp">
                                             <div class="userImgs">
-                                                <img src="images/caroBanner.jpg">
+                                                <img src="{{asset('dashboard/images/caroBanner.jpg')}}">
                                             </div>
                                             <div class="float-left">
                                                 <h6><strong>Name : </strong></h6>
@@ -116,7 +115,7 @@
                                             <div class="col-lg-6">
                                                 <div class="seeAllGrp">
                                                     <div class="seeAllPr">
-                                                        <img src="images/caroBanner.jpg">
+                                                        <img src="{{asset('dashboard/images/caroBanner.jpg')}}">
                                                     </div>
                                                     <a href="activePr.html">See All Active Properties</a>
                                                 </div>
@@ -124,7 +123,7 @@
                                             <div class="col-lg-6">
                                                 <div class="seeAllGrp">
                                                     <div class="seeAllPr">
-                                                        <img src="images/caroBanner.jpg">
+                                                        <img src="{{asset('dashboard/images/caroBanner.jpg')}}">
                                                     </div>
                                                     <a href="drated.html">See All Drafted Properties</a>
                                                 </div>
@@ -143,3 +142,7 @@
     </div>
 </div>
 @endsection
+
+<script>
+    feather.replace()
+</script>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.abc')
 @section('title')
     {{$status=='rent'?'Renting Property':'Buying Property'}}
 @endsection

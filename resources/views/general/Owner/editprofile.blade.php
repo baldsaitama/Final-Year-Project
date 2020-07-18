@@ -1,66 +1,8 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Dashboard </title>
-</head>
-
-<body>
-<!-- navbar -->
-<nav class="navbar my-nav navbar-expand-lg fixed-top ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h4>Gharbhada</h4>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-signal fa-rotate-270"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto ">
-                <li class="nav-item ">
-                    <a class="nav-link " href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item ">
-                    <a class="nav-link" href=""><span class="navNotify">  <i data-feather="bell"></i>
-                     <span class="countNot">2</span>
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown  mr-0 pr-0">
-                    <div class="row">
-                        <div class="col-7">
-                            <a class="nav-link dropdown-toggle" href="#" id="userActionBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                User's Name
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="userActionBtn">
-                                <a class="dropdown-item" href="#">Sub Menu</a>
-                                <a class="dropdown-item" href="#">Sub Menu</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
-                            </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="menuUserImg">
-                                <img src="images/profile.jpg" alt="user" class="d-flex img-responsive">
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- dashboard ui -->
+@extends('layouts.abc')
+@section('title')
+    Edit Profile
+@endsection
+@section('content')
 <div class="dashboardUi">
     <div class="container-fluid">
         <div class="row">
@@ -146,14 +88,4 @@
 </div>
 <!-- footer -->
 <!--  JavaScript -->
-<script type="text/javascript " src="js/jquery-3.2.1.min.js "></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript " src="js/owl.carousel.min.js "></script>
-<script src="js/script.js"></script>
-<script src="js/feather.min.js"></script>
-<script>
-    feather.replace()
-</script>
-</body>
-
-</html>
+@endsection
