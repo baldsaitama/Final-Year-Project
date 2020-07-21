@@ -1,4 +1,4 @@
-@extends('layouts.abc')
+@extends('layouts.app')
 @section('title')
     {{$status=='rent'?'Renting Property':'Buying Property'}}
 @endsection
@@ -78,13 +78,13 @@
                         <div class="float-left">
                             <h2>Properties For {{$status=='rent'?'Rent':'Buying'}}</h2>
                         </div>
-                        {{-- <div class="float-right sortSl">
+                         <div class="float-right sortSl">
                             <select class="custom-select">
                                 <option value="1">Newest First</option>
                                 <option value="1">Newest First</option>
                             </select>
 
-                        </div> --}}
+                        </div>
                         <div class="clear"></div>
                         <div class="row">
                             @foreach ($properties as $property)

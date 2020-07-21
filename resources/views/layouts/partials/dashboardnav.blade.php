@@ -13,7 +13,7 @@
                 </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="notifications.html"><span class="navNotify">  <i data-feather="bell"></i>
+                    <a class="nav-link" href="notifications.html"><span class="navNotify"></span>  <i data-feather="bell"></i>
                      <span class="countNot">2</span>
                     </a>
                 </li>
