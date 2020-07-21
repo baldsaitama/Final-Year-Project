@@ -63,7 +63,7 @@ class UserRepository extends Repository
 		}
 
 		$user->user_type = $request->user_type? :$user->user_type;
-		$user->is_verified = $request->is_verified;
+		$user->is_verified = $request->is_verified? :$user->is_verified;
 		$user->save();
 
 		return $user;

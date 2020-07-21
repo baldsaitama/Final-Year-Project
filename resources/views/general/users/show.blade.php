@@ -13,13 +13,13 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="userImg">
-                                    <img src="{{asset('dashboard/images/profile.jpg')}}">
+                                    <img src="{{authUser()->present()->profilePicture}}">
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="userInfo">
                                     <h6>Welcome Back</h6>
-                                    <p>User name</p>
+                                    <p>{{authUser()->name}}</p>
                                 </div>
                             </div>
                         </div>
@@ -30,13 +30,16 @@
                                 <a href="{{route('users.show',authUser()->id)}}">Dashboard</a>
                             </li>
                             <li>
-                                <a href="edit profile.html">Edit Profile</a>
+                                <a href="{{route('users.edit',authUser()->id)}}">Edit Profile</a>
                             </li>
                             <li>
-                                <a href="notifications.html">Notifications</a>
+                                <a href="{{route('users.editPassword')}}">Change Password</a>
                             </li>
                             <li>
-                                <a href="#">Log Out</a>
+                                <a href="{{route('notifications.index')}}">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
                             </li>
                         </ul>
                     </div>
@@ -60,21 +63,21 @@
                                                 <h6><strong>Name : </strong></h6>
                                             </div>
                                             <div class="float-right">
-                                                <h6>Sagar Khadka</h6>
+                                                <h6>{{authUser()->name}}</h6>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="float-left">
                                                 <h6><strong>Email : </strong></h6>
                                             </div>
                                             <div class="float-right">
-                                                <h6>Sagar@gmailcom</h6>
+                                                <h6>{{authUser()->email}}</h6>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="float-left">
                                                 <h6><strong>Phone : </strong></h6>
                                             </div>
                                             <div class="float-right">
-                                                <h6>786151812</h6>
+                                                <h6>{{authUser()->phone}}</h6>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="float-left">
@@ -95,7 +98,7 @@
                                                 <p><strong>Acive Properties : </strong></p>
                                             </div>
                                             <div class="float-right">
-                                                <p>0</p>
+                                                <p>{{count(authUser()->properties->where('is_published',1))}}</p>
 
                                             </div>
                                             <div class="clear"></div>
@@ -106,7 +109,7 @@
                                                 <p><strong>Drafted Properties : </strong></p>
                                             </div>
                                             <div class="float-right">
-                                                <p>0</p>
+                                                <p>{{count(authUser()->properties->where('is_published',0))}}</p>
 
                                             </div>
                                             <div class="clear"></div>
@@ -117,7 +120,7 @@
                                                     <div class="seeAllPr">
                                                         <img src="{{asset('dashboard/images/caroBanner.jpg')}}">
                                                     </div>
-                                                    <a href="activePr.html">See All Active Properties</a>
+                                                    <a href="{{route('properties.index')}}">See All Active Properties</a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -125,7 +128,7 @@
                                                     <div class="seeAllPr">
                                                         <img src="{{asset('dashboard/images/caroBanner.jpg')}}">
                                                     </div>
-                                                    <a href="drated.html">See All Drafted Properties</a>
+                                                    <a href="{{route('properties.index')}}">See All Drafted Properties</a>
                                                 </div>
                                             </div>
                                         </div>
