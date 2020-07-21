@@ -31,6 +31,9 @@
                                 <a href="{{route('users.show',authUser()->id)}}">Dashboard</a>
                             </li>
                             <li>
+                                <a href="{{route('users.edit',authUser()->id)}}">Edit Profile</a>
+                            </li>
+                            <li>
                                 <a href="{{route('users.editPassword')}}">Change Password</a>
                             </li>
                             <li>

@@ -64,7 +64,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('general.users.edit');
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Change Password
+    Edit Profile
 @endsection
 
 @section('content')
@@ -49,34 +49,38 @@
             <div class="col-lg-10 ">
                 <div class="dashContain">
                     <div class="photobazarCard">
-                        <h4>Change Password</h4>
+                        <h4>Edit Profile</h4>
 
                         <div class="userProfileUi">
                             <div class="container-fluid">
-                                <form action="{{route('users.changePassword',authUser()->id)}}" method="POST">
+                                <form action="{{route('users.update',authUser()->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="dashHead">Old Password</span> 
-                                            <input type="password" name="old_password" class="form-control mt-2 mb-3 @error('old_password') is-invalid @enderror" id="old_password" placeholder="Enter your current password" required autofocus>
-                                            @error('required')
+                                            <span class="dashHead">Name</span> 
+                                            <input type="text" name="name" class="form-control mt-2 mb-3 @error('name') is-invalid @enderror" id="name" placeholder="Enter your name" required autofocus value="{{authUser()->name}}">
+                                            @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-
-                                            <span class="dashHead ">New Password</span> 
-                                            <input type="password" name="password" class="form-control mt-2 mb-3 @error('new_password') is-invalid @enderror" id="password" placeholder="Enter your new password" required>
-                                                @error('required')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-
-                                            <span class="dashHead ">Confirm Password</span> 
-                                            <input id="password-confirm" type="password" class="form-control mt-2 mb-3" name="password_confirmation" required autocomplete="new-password" placeholder="Re-enter your new password">
-
+                                            <span class="dashHead">Email</span> 
+                                            <input type="email" name="email" class="form-control mt-2 mb-3 @error('email') is-invalid @enderror" id="email" placeholder="Enter your email" required value="{{authUser()->email}}">
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <span class="dashHead">phone</span> 
+                                            <input type="number" name="phone" class="form-control mt-2 mb-3 @error('phone') is-invalid @enderror" id="phone" placeholder="Enter your phone" value="{{authUser()->phone}}">
+                                            @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <span class="dashHead">Profile Picture</span> 
+                                            <input type="file" name="profile_picture" accept='image/*'>
                                         </div>
 
                                         <div class="col-lg-12 text-center mt-3">
