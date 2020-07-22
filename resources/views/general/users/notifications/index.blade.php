@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.abc')
 
 @section('title')
     Notifications
@@ -87,7 +87,7 @@
                                                             <div class="col-3">
                                                                 <img src="images/caroBanner.jpg" width="180">
                                                             </div>
-        
+
                                                         </div>
                                                     </div>
                                                 </td>
@@ -95,7 +95,7 @@
                                                     <button>Confirm</button>
                                                     <button>Delete</button>
                                                 </td>
-        
+
                                             </tr>
                                         @endforeach
 

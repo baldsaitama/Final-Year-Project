@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.abc')
 
 @section('title')
     Change Password
@@ -58,7 +58,7 @@
                                     @method('PUT')
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="dashHead">Old Password</span> 
+                                            <span class="dashHead">Old Password</span>
                                             <input type="password" name="old_password" class="form-control mt-2 mb-3 @error('old_password') is-invalid @enderror" id="old_password" placeholder="Enter your current password" required autofocus>
                                             @error('required')
                                                 <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                                                 </span>
                                             @enderror
 
-                                            <span class="dashHead ">New Password</span> 
+                                            <span class="dashHead ">New Password</span>
                                             <input type="password" name="password" class="form-control mt-2 mb-3 @error('new_password') is-invalid @enderror" id="password" placeholder="Enter your new password" required>
                                                 @error('required')
                                                     <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
                                                     </span>
                                                 @enderror
 
-                                            <span class="dashHead ">Confirm Password</span> 
+                                            <span class="dashHead ">Confirm Password</span>
                                             <input id="password-confirm" type="password" class="form-control mt-2 mb-3" name="password_confirmation" required autocomplete="new-password" placeholder="Re-enter your new password">
 
                                         </div>

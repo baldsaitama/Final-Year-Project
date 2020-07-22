@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.abc')
 
 @section('title')
     Edit Profile
@@ -58,28 +58,28 @@
                                     @method('PUT')
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="dashHead">Name</span> 
+                                            <span class="dashHead">Name</span>
                                             <input type="text" name="name" class="form-control mt-2 mb-3 @error('name') is-invalid @enderror" id="name" placeholder="Enter your name" required autofocus value="{{authUser()->name}}">
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <span class="dashHead">Email</span> 
+                                            <span class="dashHead">Email</span>
                                             <input type="email" name="email" class="form-control mt-2 mb-3 @error('email') is-invalid @enderror" id="email" placeholder="Enter your email" required value="{{authUser()->email}}">
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <span class="dashHead">phone</span> 
+                                            <span class="dashHead">phone</span>
                                             <input type="number" name="phone" class="form-control mt-2 mb-3 @error('phone') is-invalid @enderror" id="phone" placeholder="Enter your phone" value="{{authUser()->phone}}">
                                             @error('phone')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <span class="dashHead">Profile Picture</span> 
+                                            <span class="dashHead">Profile Picture</span>
                                             <input type="file" name="profile_picture" accept='image/*'>
                                         </div>
 

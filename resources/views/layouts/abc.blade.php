@@ -15,9 +15,12 @@
     </title>
 
     @section('stylesheets')
-
+        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/bootstrap.min.css')}}">
         <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/owl.theme.default.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/styles.css')}}">
