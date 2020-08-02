@@ -3,7 +3,6 @@
 @section('title')
     Notifications
 @endsection
-
 @section('content')
 <div class="dashboardUi">
     <div class="container-fluid">
