@@ -10,6 +10,7 @@ class Booking extends Model
         'id',
         'user_id',
         'property_id',
+        'status'
 
     ];
     public function property(){

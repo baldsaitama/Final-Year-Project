@@ -92,8 +92,21 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <button>Confirm</button>
-                                                    <button>Delete</button>
+                                                    @if (array_key_exists('status',$notification_data))
+                                                        @php
+                                                            $booking = \App\Models\Booking::where('id',$notification_data['id'])->first();
+                                                        @endphp
+                                                        @if ($booking->status == 'pending')
+                                                            <a href="{{route('bookings.accept',$notification_data['id'])}}" class="notification-read notificationButton">
+                                                                Confirm
+                                                            </a>
+                                                            <a href="{{route('bookings.reject',$notification_data['id'])}}" class="notification-read notificationButton">
+                                                                Reject
+                                                            </a>
+                                                        @else
+                                                            {{$booking->status}}
+                                                        @endif
+                                                    @endif
                                                 </td>
 
                                             </tr>

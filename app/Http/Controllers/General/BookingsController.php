@@ -92,4 +92,18 @@ class BookingsController extends Controller
     {
         //
     }
+
+    public function accept($id)
+    {
+        $booking = $this->bookingRepo->requiredById($id);
+        $booking->update(['status'=>'accepted']);
+        return redirect()->back()->withStatus('Booking Accepted');
+    }
+
+    public function reject($id)
+    {
+        $booking = $this->bookingRepo->requiredById($id);
+        $booking->update(['status'=>'rejected']);
+        return redirect()->back()->withStatus('Booking Rejected');
+    }
 }

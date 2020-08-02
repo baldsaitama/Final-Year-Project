@@ -25,6 +25,7 @@
                                     @csrf
                                     <input type="hidden" name="user_id" value="{{authUser()->id}}">
                                     <input type="hidden" name="property_id" value="{{$property->id}}">
+                                    <input type="hidden" name="status" value="pending">
                                     <button class="btn btn-bookBtn" >Book Now</button>
                                 </form>
                                 <div class="clear"></div>
