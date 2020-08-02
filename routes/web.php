@@ -63,6 +63,16 @@ Route::group(['middleware' => 'verified'], function(){
 		Route::resource('properties','PropertiesController');
 		//
 		Route::resource('profiles','ProfilesController');
+		Route::get('bookings/accept/{id}', [
+			'as' => 'bookings.accept',
+			'uses' => 'BookingsController@accept'
+		]);
+
+		Route::get('bookings/reject/{id}', [
+			'as' => 'bookings.reject',
+			'uses' => 'BookingsController@reject'
+		]);
+
 		Route::resource('bookings','BookingsController');
 		Route::resource('notifications','NotificationsController');
 

@@ -18,6 +18,7 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index();
             $table->unsignedBigInteger('property_id')->index();
+            $table->string('status')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
