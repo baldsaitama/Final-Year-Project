@@ -162,6 +162,7 @@ p {
 }
 
 footer {
+    margin-top: auto;
     background-color: #000;
     padding: 20px 0;
     color: #dadada;

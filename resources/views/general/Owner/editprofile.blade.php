@@ -1,4 +1,4 @@
-@extends('layouts.abc')
+@extends('layouts.dashboardapp.blade.php')
 @section('title')
     Edit Profile
 @endsection

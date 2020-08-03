@@ -311,6 +311,7 @@ p {
 }
 
 .photobazarCard {
+    margin-bottom: 32px;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;

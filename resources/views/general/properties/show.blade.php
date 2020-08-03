@@ -26,7 +26,10 @@
                                     <input type="hidden" name="user_id" value="{{authUser()->id}}">
                                     <input type="hidden" name="property_id" value="{{$property->id}}">
                                     <input type="hidden" name="status" value="pending">
-                                    <button class="btn btn-bookBtn" >Book Now</button>
+                                    @if (authUser()->id != $property->user_id)
+                                        <button class="btn btn-bookBtn" >Book Now</button>
+                                    @endif
+
                                 </form>
                                 <div class="clear"></div>
                             </div>

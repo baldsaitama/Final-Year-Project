@@ -1,4 +1,4 @@
-@extends('layouts.abc')
+@extends('layouts.dashboardapp')
 
 @section('title')
     Notifications
@@ -36,7 +36,12 @@
                                 <a href="{{route('users.editPassword')}}">Change Password</a>
                             </li>
                             <li>
+                                <a href="{{route('bookings.index')}}">Bookings</a>
+                            </li>
+                            <li>
+                        @if(authUser()->user_type == "owner")
                                 <a href="{{route('notifications.index')}}">Notifications</a>
+                            @endif
                             </li>
                             <li>
                                 <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
