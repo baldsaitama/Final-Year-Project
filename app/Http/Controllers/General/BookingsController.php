@@ -97,6 +97,7 @@ class BookingsController extends Controller
     {
         $booking = $this->bookingRepo->requiredById($id);
         $booking->update(['status'=>'accepted']);
+        $booking->property->update(['is_published'=>0]);
         return redirect()->back()->withStatus('Booking Accepted');
     }
 
