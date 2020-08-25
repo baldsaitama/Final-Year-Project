@@ -90,7 +90,9 @@ class BookingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = $this->bookingRepo->requiredById($id);
+        $booking->delete();
+        return redirect()->back()->withStatus('Bookin Cancelled');
     }
 
     public function accept($id)

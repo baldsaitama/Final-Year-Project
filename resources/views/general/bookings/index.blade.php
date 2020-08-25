@@ -69,33 +69,41 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>
-                                                <div class="pprtGrp">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <p>You have booked <span>Mr. user</span> property</p>
+                                            @foreach ($bookings as $index=>$booking)
+                                                <tr>
+                                                    <th scope="row">{{++$index}}</th>
+                                                    <td>
+                                                        <div class="pprtGrp">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <p>You have booked <span>Mr. {{$booking->user->name}}</span> property</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="pprtGrp">
-                                                    <div class="row">
-                                                        <div class="col-3">
-                                                            <img src="images/caroBanner.jpg" width="180">
+                                                    </td>
+                                                    <td>
+                                                        <div class="pprtGrp">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <a href="{{route('properties.showProperty',$booking->property->id)}}">
+                                                                        <img src="{{asset($booking->property->images->first()?$booking->property->images->first()->path:asset('images/banner.jpg'))}}" width="180">
+                                                                    </a>
+                                                                </div>
+        
+                                                            </div>
                                                         </div>
-
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn-danger">Cancel Booking</button>
-
-                                            </td>
-
-                                        </tr>
+                                                    </td>
+                                                    <td>
+                                                        <form action="{{route('bookings.destroy',$booking->id)}}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn-danger">Cancel Booking</button>
+                                                        </form>
+        
+                                                    </td>
+        
+                                                </tr>
+                                            @endforeach
 
                                         </tbody>
                                     </table>
