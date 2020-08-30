@@ -27,7 +27,7 @@
     <div class="wrapper">
         <div class="container-fluid">
             <div class="postProperty">
-                <h2>Post Property</h2>
+                <h2>Edit Property</h2>
                 <div class="row" id="create-property-box">
                     <form method="POST" action="{{ route('properties.update',$property->id)}}" id="editPropertyForm">
                         @csrf
@@ -39,10 +39,10 @@
                                 </div>
                                 <div class="col-8">
                                     <select class="form-control" name="status" required>
-                                        <option class="rent" value="rent" {{$property->status=='rent'?'selected':''}}>
+                                        <option class="rent" value="Rent" {{$property->status=='rent'?'selected':''}}>
                                             Rent
                                         </option>
-                                        <option class="sale" value="sale" {{$property->status=='sale'?'selected':''}}>
+                                        <option class="sale" value="Sale" {{$property->status=='sale'?'selected':''}}>
                                             Sale
                                         </option>
                                     </select>
@@ -56,23 +56,23 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required class="form-check-input" type="radio" name="category" id="inlineRadio1" value="house" {{$property->category=='house'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="category" id="inlineRadio1" value="House" {{$property->category=='house'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio1">House</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="flat" {{$property->category=='flat'?'checked':''}}>
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="Flat" {{$property->category=='flat'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio2">Flat</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="room" {{$property->category=='room'?'checked':''}}>
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="Room" {{$property->category=='room'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio3">Room</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio4" value="apartment" {{$property->category=='apartment'?'checked':''}}>
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio4" value="Apartment" {{$property->category=='apartment'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio4">Apartment</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio5" value="office space" {{$property->category=='office space'?'checked':''}}>
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio5" value="Office Space" {{$property->category=='office space'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio5">Office Space</label>
                                     </div>
 
@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input required class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental" {{$property->type=='residental'?'checked':''}}>
+                                        <input required class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residential" {{$property->type=='residential'?'checked':''}}>
                                         <label class="form-check-label" for="inlineRadio6">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -125,16 +125,16 @@
                                 </div>
                                 <div class="col-8">
                                     <select required class="form-control" name="property_face">
-                                        <option class="east" value="east" {{$property->property_face=='east'?'selected':''}}>
+                                        <option class="east" value="East" {{$property->property_face=='east'?'selected':''}}>
                                             East
                                         </option>
-                                        <option class="west" value="west" {{$property->property_face=='west'?'selected':''}}>
+                                        <option class="west" value="West" {{$property->property_face=='west'?'selected':''}}>
                                             West
                                         </option>
-                                        <option class="southEast" value="southEast" {{$property->property_face=='southEast'?'selected':''}}>
+                                        <option class="southEast" value="South East" {{$property->property_face=='southEast'?'selected':''}}>
                                             South East
                                         </option>
-                                        <option class="southWest" value="southWest" {{$property->property_face=='southWest'?'selected':''}}>
+                                        <option class="southWest" value="South West" {{$property->property_face=='southWest'?'selected':''}}>
                                             South West
                                         </option>
                                     </select>
@@ -147,6 +147,7 @@
                                     <label style="float: none; text-align: center;">Road :</label>
                                 </div>
                                 <div class="col-4">
+                                    <label for="unit">Length</label>
                                     <input required type="text" class="form-control" placeholder="Length" name="road_width" value="{{$property->road_width}}">
                                 </div>
                                 <div class="col-4">
@@ -193,13 +194,13 @@
                                 </div>
                                 <div class="col-8">
                                     <select required class="form-control" name="furnish">
-                                        <option class="furnish" value="unfurnished" {{$property->furnish=='unfurnished'?'selected':''}}>
+                                        <option class="furnish" value="Unfurnished" {{$property->furnish=='unfurnished'?'selected':''}}>
                                             Unfurnished
                                         </option>
-                                        <option class="furnish" value="semifurnished" {{$property->furnish=='semifurnished'?'selected':''}}>
+                                        <option class="furnish" value="Semi-furnished" {{$property->furnish=='semifurnished'?'selected':''}}>
                                             Semi-Furnished
                                         </option>
-                                        <option class="furnish" value="wellfurnished" {{$property->furnish=='wellfurnished'?'selected':''}}>
+                                        <option class="furnish" value="Well-furnished" {{$property->furnish=='wellfurnished'?'selected':''}}>
                                             Well-Furnished
                                         </option>
                                     </select>

@@ -83,20 +83,20 @@ if (! function_exists('getAmenityClass')) {
 	function getAmenityClass($amenity)
 	{
 		switch ($amenity) {
-			case stristr($amenity,'wifi'): 
+			case stristr($amenity,'Wifi'):
 				return 'fa-wifi';
 				break;
-			case stristr($amenity,'tv'):
-				return 'fa-tv';
+			case stristr($amenity,'Parking'):
+				return 'fa-parking';
 				break;
-			case stristr($amenity,'bath'):
-				return 'fa-bath';
+			case stristr($amenity,'Electricity'):
+				return 'fa-bolt';
 				break;
-			case stristr($amenity,'toilet paper'):
-				return 'fa-toilet-paper';
+			case stristr($amenity,'Garden'):
+				return 'fa-tree';
 				break;
-			case stristr($amenity,'breakfast'):
-				return 'fa-mug-hot';
+			case stristr($amenity,'Water Supply'):
+				return 'fa-tint';
 				break;
 			case stristr($amenity,'parking'):
 				return 'fa-parking';

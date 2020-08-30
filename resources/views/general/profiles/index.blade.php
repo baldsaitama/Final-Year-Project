@@ -33,25 +33,25 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-12 mb-4">
                                 <div class="row">
                                     <div class="col-4">
                                         <label for="name">Upload citizenship photo(both sides)</label>
                                     </div>
-                                    <div class="uploader__box js-uploader__box l-center-box">
-                                    <div class="input-group">
+                                    <div class="col-8">
+                                        <div class="uploader__box js-uploader__box l-center-box">
+                                            <div class="input-group">
 
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                aria-describedby="inputGroupFileAddon01" value="Select Files" name="image" accept="image/*">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                <div class="col-lg-6 mb-3">
+
+                                                    <input type="file" class="mt-3 " name="image" placeholder="Enter Email Address">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-
                                 </div>
                             </div>
+
 
                             <div class="col-lg-12 mb-4">
                                 <div class="bhadaBnt">

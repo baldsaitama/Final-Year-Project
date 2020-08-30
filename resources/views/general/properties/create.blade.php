@@ -84,11 +84,11 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input  class="form-check-input" type="radio" name="type" id="inlineRadio6" value="residental">
+                                        <input  class="form-check-input" type="radio" name="type" id="inlineRadio6" value="Residential">
                                         <label class="form-check-label" for="inlineRadio6">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="type" id="inlineRadio7" value="commercial">
+                                        <input class="form-check-input" type="radio" name="type" id="inlineRadio7" value="Commercial">
                                         <label class="form-check-label" for="inlineRadio7">Commercial</label>
                                     </div>
                                 </div>
@@ -220,6 +220,11 @@
                                     <label>Kitchen</label>
                                 </div>
                                 <div class="col-8">
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="kitchen" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -252,6 +257,10 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="bedroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
@@ -283,6 +292,10 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="living_room" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="living_room" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
@@ -313,6 +326,10 @@
                                     <label>Bathroom</label>
                                 </div>
                                 <div class="col-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="bathroom" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -395,14 +412,17 @@
                                         <option selected="selected" disabled>
                                             Select pricing value
                                         </option>
-                                        <option class="priceunit" value="per month">
+                                        <option class="priceunit" value="Per Month">
                                             Per Month
                                         </option>
-                                        <option class="priceunit" value="onwards">
+                                        <option class="priceunit" value="Onwards">
                                             Onwards
                                         </option>
-                                        <option class="priceunit" value="per room">
+                                        <option class="priceunit" value="Per Room">
                                             Per Room
+                                        </option>
+                                        <option class="priceunit" value="For Sale">
+                                            For Sale
                                         </option>
                                     </select>
                                 </div>

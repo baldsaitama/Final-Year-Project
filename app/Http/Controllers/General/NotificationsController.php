@@ -21,7 +21,7 @@ class NotificationsController extends Controller
     public function index()
     {
         $notifications = authUser()->notifications()->paginate(10);
-        return view('general.Owner.notifications', compact('notifications'));
+        return view('general.users.notifications.index', compact('notifications'));
     }
 
     /**

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Repositories\Eloquent;
 
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Notifications\Users\UserPasswordChangedMail;
 
 /**
- * 
+ *
  */
 class UserRepository extends Repository
 {
@@ -51,7 +51,7 @@ class UserRepository extends Repository
 		} else {
 			$user->name = $request->name;
 		}
-		
+
 
 		if($request->hasFile('profile_picture')){
 			$file = $this->uploadPhoto($request->file('profile_picture'), "uploads/users/{$user->id}/profile");

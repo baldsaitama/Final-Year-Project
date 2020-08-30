@@ -1,4 +1,3 @@
-
 @extends('admin.dashboard-layout')
 
 @section('title')
@@ -110,7 +109,7 @@
 								<img src="{{ $user->present()->profilePicture }}" alt="">
         	                @endif
 						</div>
-						
+
 		            </div>
 		            <div class="box-footer">
 						<div class="pull-right">
@@ -119,6 +118,7 @@
 						</div>
 		        	</div>
 				</form>
+
 				<div class="col-md-6">
 					<div class="form-group">
 						@if ($user->profile)
@@ -131,6 +131,7 @@
 						@endif
 					</div>
 				</div>
+
 	        </div>
 		</div>
 	</div>
@@ -145,7 +146,7 @@
 			var title = $(this).data('title');
 			var text = $(this).data('text');
 			var form = $(this).next('.delete-form');
-			var route = form.attr('action');			
+			var route = form.attr('action');
 
 			confirmWithCallback(title, text, (function(result) {
             	$.ajax({

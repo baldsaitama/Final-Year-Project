@@ -43,11 +43,6 @@
                                         <img src="{{asset($image->path)}}" alt=" ">
                                     </div>
                                 </div>
-                                <div class="item ">
-                                    <div class="slideImg">
-                                        <img src="{{asset($image->path)}}" alt=" ">
-                                    </div>
-                                </div>
                             @endforeach
                         </div>
                     </div>

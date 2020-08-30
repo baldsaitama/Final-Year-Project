@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-lg-10">
                         <div class="float-left">
-                            <h2>{{$properties->count()}} results(s) for {{request()->input('area')}}</h2>
+                            <h2>{{$properties->count()}} results(s) found{{request()->input('area')}}</h2>
                         </div>
                         {{-- <div class="float-right sortSl">
                             <select class="custom-select">
