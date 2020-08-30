@@ -101,7 +101,9 @@
                                                         <div class="row">
                                                             <div class="col-3">
                                                                 @if ($booking->property)
+                                                                <a href="{{route('properties.showProperty',$booking->property->id)}}">
                                                                     <img src="{{asset($booking->property->images->first()?$booking->property->images->first()->path:asset('images/caroBanner.jpg'))}}" alt="" width="100" height="100">
+                                                                </a>
                                                                 @else
                                                                     <img src="images/caroBanner.jpg" width="180">
                                                                 @endif
