@@ -4,6 +4,7 @@
     User
 @endsection
 @section('content')
+
     <div class="dashboardUi">
         <div class="container-fluid">
             <div class="row">
@@ -97,6 +98,7 @@
 
                                             </div>
                                         </div>
+                                        @if(authUser()->user_type == "owner")
                                         <div class="col-lg-8">
                                             <div class="activeCase">
                                                 <div class="float-left">
@@ -139,6 +141,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                            @endif
                                     </div>
                                 </div>
                             </div>

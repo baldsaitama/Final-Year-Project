@@ -1,7 +1,7 @@
 
 @extends('admin.dashboard-layout')
 
-@php 
+@php
 	$can_manage = authUser()->can('manage_products');
 @endphp
 
@@ -48,7 +48,7 @@
 				            <div class="col-md-6">
 				            	<div class="form-group">
 			    	                <label for="name">Property Title <span class="text-danger">*</span></label>
-			    	                <input 
+			    	                <input
 			    	                	type="text"
 			    	                	name="title"
 			    	                	class="form-control @error('title') is-invalid @enderror"
@@ -66,7 +66,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="status">Status</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="status"
         	    	                	class="form-control @error('status') is-invalid @enderror"
@@ -84,7 +84,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="type">type</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="type"
         	    	                	class="form-control @error('type') is-invalid @enderror"
@@ -102,7 +102,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="category">category</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="category"
         	    	                	class="form-control @error('category') is-invalid @enderror"
@@ -120,7 +120,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="latitude">latitude</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="latitude"
         	    	                	class="form-control @error('latitude') is-invalid @enderror"
@@ -138,7 +138,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="longitude">longitude</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="longitude"
         	    	                	class="form-control @error('longitude') is-invalid @enderror"
@@ -156,7 +156,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="property_face">property_face</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="property_face"
         	    	                	class="form-control @error('property_face') is-invalid @enderror"
@@ -174,7 +174,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="road_width">road_width</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="road_width"
         	    	                	class="form-control @error('road_width') is-invalid @enderror"
@@ -192,7 +192,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="road_unit">road_unit</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="road_unit"
         	    	                	class="form-control @error('road_unit') is-invalid @enderror"
@@ -210,7 +210,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="road_type">road_type</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="road_type"
         	    	                	class="form-control @error('road_type') is-invalid @enderror"
@@ -228,7 +228,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="built_year">built_year</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="built_year"
         	    	                	class="form-control @error('built_year') is-invalid @enderror"
@@ -246,7 +246,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="furnish">furnish</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="furnish"
         	    	                	class="form-control @error('furnish') is-invalid @enderror"
@@ -264,7 +264,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="kitchen">kitchen</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="kitchen"
         	    	                	class="form-control @error('kitchen') is-invalid @enderror"
@@ -282,7 +282,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="bedroom">bedroom</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="bedroom"
         	    	                	class="form-control @error('bedroom') is-invalid @enderror"
@@ -300,7 +300,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="bathroom">bathroom</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="bathroom"
         	    	                	class="form-control @error('bathroom') is-invalid @enderror"
@@ -318,7 +318,7 @@
         		            <div class="col-md-6">
         		            	<div class="form-group">
         	    	                <label for="living_room">living_room</label>
-        	    	                <input 
+        	    	                <input
         	    	                	type="text"
         	    	                	name="living_room"
         	    	                	class="form-control @error('living_room') is-invalid @enderror"
@@ -439,7 +439,7 @@
 			autoProcessQueue: false,
 			url: "{{ route('admin.properties.store') }}",
 			paramName: "files",
-			maxFilesize: 8, 
+			maxFilesize: 8,
 			addRemoveLinks: true,
 			uploadMultiple: true,
 			acceptedFiles: 'image/*',
@@ -486,7 +486,7 @@
 		                  formData.append(el.name, el.value);
 		              });
 		          });
-		          
+
 		         this.on('success', function(file, response){
 		     		toastMessage(response);
 		     		window.location.href = "{{ route('admin.properties.index') }}";

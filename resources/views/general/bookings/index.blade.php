@@ -76,7 +76,7 @@
                                                         <div class="pprtGrp">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <p>You have booked <span>Mr. {{$booking->user->name}}</span> property</p>
+                                                                    <p>You have booked <span>Mr. {{$booking->property->user->name}}</span> property</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -89,7 +89,7 @@
                                                                         <img src="{{asset($booking->property->images->first()?$booking->property->images->first()->path:asset('images/banner.jpg'))}}" width="180">
                                                                     </a>
                                                                 </div>
-        
+
                                                             </div>
                                                         </div>
                                                     </td>
@@ -99,9 +99,9 @@
                                                             @method('DELETE')
                                                             <button class="btn-danger">Cancel Booking</button>
                                                         </form>
-        
+
                                                     </td>
-        
+
                                                 </tr>
                                             @endforeach
 
