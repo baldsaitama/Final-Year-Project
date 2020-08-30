@@ -43,7 +43,7 @@ class BookingCreated extends Notification
      */
     public function toArray($notifiable)
     {
-        return array_merge($this->booking->toArray(), ['message' => 'New booking created by - '.$this->user->name]);
+        return array_merge($this->booking->toArray(), ['message' => 'New booking created by - '.$this->user->name,'user_id'=>$this->user->id]);
 
     }
 }

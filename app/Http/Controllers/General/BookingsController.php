@@ -5,15 +5,18 @@ namespace App\Http\Controllers\General;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\BookingRepository;
+use App\Repositories\Eloquent\NotificationRepository;
 
 class BookingsController extends Controller
 {
 
     protected $bookingRepo;
+    protected $notificationRepo;
 
-    function __construct(BookingRepository $bookingRepo)
+    function __construct(BookingRepository $bookingRepo, NotificationRepository $notificationRepo)
     {
        $this->bookingRepo = $bookingRepo;
+       $this->notificationRepo = $notificationRepo;
     }
     /**
      * Display a listing of the resource.
@@ -91,6 +94,15 @@ class BookingsController extends Controller
     public function destroy($id)
     {
         $booking = $this->bookingRepo->requiredById($id);
+        $notifications = $this->notificationRepo->notifications()->get();
+        foreach ($notifications as $notification) {
+            $notification_data = $notification->data;
+            if ($notification_data['id']==$id) {
+                $notification->delete();
+                break;
+            }
+        }
+
         $booking->delete();
         return redirect()->back()->withStatus('Bookin Cancelled');
     }

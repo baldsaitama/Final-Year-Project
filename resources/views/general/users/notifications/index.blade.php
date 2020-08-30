@@ -81,6 +81,17 @@
                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <p>{{$notification_data['message']}}</p>
+                                                                @php
+                                                                    $user = \App\Models\User::where('id',$notification_data['user_id'])->first();
+                                                                    $booking = \App\Models\Booking::where('id',$notification_data['id'])->first();
+                                                                @endphp
+                                                                @if ($user)
+                                                                    <div style="font-style: italic;">
+                                                                        <div>Name:{{$user->name}}</div>
+                                                                        <div>Phone:{{$user->phone}}</div>
+                                                                        <div>Email:{{$user->email}}</div>
+                                                                    </div>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -89,7 +100,11 @@
                                                     <div class="pprtGrp">
                                                         <div class="row">
                                                             <div class="col-3">
-                                                                <img src="images/caroBanner.jpg" width="180">
+                                                                @if ($booking->property)
+                                                                    <img src="{{asset($booking->property->images->first()?$booking->property->images->first()->path:asset('images/caroBanner.jpg'))}}" alt="" width="100" height="100">
+                                                                @else
+                                                                    <img src="images/caroBanner.jpg" width="180">
+                                                                @endif
                                                             </div>
 
                                                         </div>
