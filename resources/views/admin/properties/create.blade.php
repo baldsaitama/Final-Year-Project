@@ -175,7 +175,7 @@
         		            	<div class="form-group">
         	    	                <label for="road_width">road_width</label>
         	    	                <input
-        	    	                	type="text"
+        	    	                	type="number"
         	    	                	name="road_width"
         	    	                	class="form-control @error('road_width') is-invalid @enderror"
         	    	                	id="road_width"

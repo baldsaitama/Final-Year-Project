@@ -50,6 +50,7 @@
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
     {{-- <script type="text/javascript" src="{{asset('js/gharBhadaScrollTop.js')}}"></script> --}}
     <script type="text/javascript" src="{{asset('js/wow.js')}}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
         new WOW().init();
     </script>
@@ -99,15 +100,6 @@
     </script>
 
 
-    <script type="text/javascript">
-        var sliderPrice = document.getElementById("myRangePrice");
-        var output = document.getElementById("demoPrice");
-        output.innerHTML = sliderPrice.value;
-
-        sliderPrice.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
 
     @include('admin.partials.alert')
 @show

@@ -196,30 +196,33 @@
     </div>
 
 @endsection
-<script type="text/javascript ">
-    $('.gharbhadaSlide').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: false,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut',
-        smartSpeed: 2500,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
+@section('javascripts')
+    @parent
+    <script type="text/javascript ">
+        $('.gharbhadaSlide').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            autoplayHoverPause: false,
+            animateIn: 'fadeIn',
+            animateOut: 'fadeOut',
+            smartSpeed: 2500,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
             }
-        }
-
-    })
-</script>
+    
+        })
+    </script>
+@endsection
 
 

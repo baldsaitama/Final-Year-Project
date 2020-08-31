@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Edit Package
+    Edit Property
 @endsection
 
 @section('stylesheets')

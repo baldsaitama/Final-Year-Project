@@ -119,3 +119,16 @@
 
 @endsection
 
+@section('javascripts')
+    @parent
+    <script type="text/javascript">
+        var sliderPrice = document.getElementById("myRangePrice");
+        var output = document.getElementById("demoPrice");
+        output.innerHTML = sliderPrice.value;
+
+        sliderPrice.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+@endsection
+
